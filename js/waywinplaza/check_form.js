@@ -1,4 +1,4 @@
-// Проверка форм
+// Проверка форм 
 
 	function isEmail(emailAddress) {
 		var pattern = new RegExp(
