@@ -1,0 +1,163 @@
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin black-link {
+  color: $col-bl;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+
+  &:hover {
+    border-bottom: 1px solid rgba(0,0,0,.0);
+  }
+}
+
+@mixin icon-link {
+  color: $col-bg-dark_icon;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+
+  &:hover {
+    border-bottom: 1px solid rgba(0,0,0,.0);
+  }
+}
+
+@mixin btn {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 35px;
+  border: none !important;
+  background: none;
+  color: $col-bl;
+  text-transform: uppercase;
+  font-size: $fz_s;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+
+  @media only screen and (min-width: 600px) {
+    width: auto;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    display: block;
+    z-index: -1;
+    opacity: 0;
+    @include bg-brand-30;
+    @include border-radius(5px);
+    @include skewX(-12deg);
+    @include transition(opacity 400ms ease);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    display: block;
+    border-left: 2px solid $col-brand_addnl;
+    border-right: 2px solid $col-brand_main;
+    border-top: 2px solid $col-brand_addnl;
+    border-bottom: 2px solid $col-brand_main;
+    @include border-radius(5px);
+    @include skewX(-12deg);
+  }
+
+  &:hover {
+    @media only screen and (min-width: 980px) {
+      border: none !important;
+      color: $col-wh !important;
+    }
+
+    &:before {
+      @media only screen and (min-width: 980px) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.purple {
+
+    &:before {
+      background: $col-brand_main;
+      background: -moz-linear-gradient(-30deg, $col-purple 10%, $col-brand_main 85%);
+      background: -webkit-linear-gradient(-30deg, $col-purple 10%,$col-brand_main 85%);
+      background: linear-gradient(150deg, $col-purple 10%,$col-brand_main 85%);
+    }
+
+    &:after {
+      border-left: 2px solid $col-purple;
+      border-right: 2px solid $col-brand_main;
+      border-top: 2px solid $col-purple;
+      border-bottom: 2px solid $col-brand_main;
+    }
+  }
+}
+
+@mixin bg-brand-30 {
+  background: $col-brand_main;
+  background: -moz-linear-gradient(-30deg, $col-brand_addnl 10%, $col-brand_main 85%);
+  background: -webkit-linear-gradient(-30deg, $col-brand_addnl 10%,$col-brand_main 85%);
+  background: linear-gradient(150deg, $col-brand_addnl 10%,$col-brand_main 85%);
+}
+
+@mixin bg-brand-180 {
+  background: $col-brand_main;
+  background: -moz-linear-gradient(left, $col-brand_addnl 0%, $col-brand_main 100%);
+  background: -webkit-linear-gradient(left, $col-brand_addnl 0%,$col-brand_main 100%);
+  background: linear-gradient(to right, $col-brand_addnl 0%,$col-brand_main 100%);
+}
+
+@mixin img-mask {
+  background: -moz-linear-gradient(-30deg, #005400 0%, #00375a 85%);
+  background: -webkit-linear-gradient(-30deg, #005400 0%,#00375a 85%);
+  background: linear-gradient(150deg, #005400 0%,#00375a 85%);
+}
+@mixin img-mask-light {
+  background: -moz-linear-gradient(-30deg, $col-brand_addnl 0%, $col-brand_main 85%);
+  background: -webkit-linear-gradient(-30deg, $col-brand_addnl 0%,$col-brand_main 85%);
+  background: linear-gradient(150deg, $col-brand_addnl 0%,$col-brand_main 85%);
+}
+
+@mixin icons {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin top-line {
+  
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      z-index: 2;
+      @include bg-brand-180;
+    }
+}

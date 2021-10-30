@@ -1,0 +1,368 @@
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+html {
+  background-color: $col-bg-dark_addnl;
+}
+
+body {
+  position: relative;
+  background: $col-wh;
+  font-family: $ff_main;
+  font-weight: 500;
+  font-size: $fz_m;
+  line-height: $lh_m;
+  color: $col-bl;
+  overflow-x: hidden;
+
+  &.hidden {
+    opacity: 0;
+    @include transition(opacity .3s ease);
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+section {
+  position: relative;
+  @include clearfix;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  // padding-left: $ind_b;
+  // padding-right: $ind_b;
+  @include clearfix;
+  
+  &.wide {
+    min-width: 90%;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.btn {
+  @include btn;
+}
+
+a[href^="http://maps.google.com/maps"] {
+  display: none !important;
+}
+
+a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display: none;
+}
+
+a {
+  color: $col-link_main;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(56,169,224,.35);
+  @include transition(all .2s ease);
+
+  img {
+    border: none !important;
+  }
+
+  &:hover {
+
+    @media only screen and (min-width: 980px) {
+      color: $col-link_main__hover !important;
+      border-bottom: 1px solid rgba(102,191,117,.0);
+    }
+  }
+}
+
+a[href^=tel],
+a[href^=tel]:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+a.pseudo-link,
+a.popup-link,
+a.anchor-link,
+a.switcher-link {
+  border-bottom-style: dotted;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px dotted rgba(102,191,117,.0) !important;
+  }
+}
+
+p,
+ul,
+table {
+  margin-bottom: 1.6em;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1.25em;
+  line-height: $lh_s;
+}
+
+h1 {
+  font-size: $fz-h_s;
+
+  @media only screen and (min-width: 980px) {
+    font-size: $fz-h_b;
+  }
+}
+
+h2 {
+  font-size: $fz_b + 3;
+
+  @media only screen and (min-width: 980px) {
+    font-size: $fz-h_m;
+  }
+}
+
+h3 {
+  font-size: $fz_b;
+
+  @media only screen and (min-width: 980px) {
+    font-size: $fz-h_s;
+  }
+}
+
+ul.dash {
+
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 1.6em;
+    
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '—';
+      font-weight: 600;
+    }
+  }
+}
+
+.fl-grid,
+.ib-grid,
+.fx-grid {
+  margin-left: (-$ind_m);
+  margin-right: (-$ind_m);
+
+  @media screen and (min-width: 980px) {
+    margin-left: (-$ind_b);
+    margin-right: (-$ind_b);
+  }
+
+  .column {
+    padding-left: $ind_m;
+    padding-right: $ind_m;
+
+    @media screen and (min-width: 980px) {
+      padding-left: $ind_b;
+      padding-right: $ind_b;
+    }
+  }
+  &.two-cols { .column { width: 50%; } }
+  &.three-cols { .column { width: 33.333%; } }
+  &.four-cols { .column { width: 25%; } }
+  &.five-cols { .column { width: 20%; } }
+  &.six-cols { .column { width: 16.666%; } }
+  &.seven-cols { .column { width: 14.285%; } }
+  &.eight-cols { .column { width: 12.5%; } }
+  &.nine-cols { .column { width: 11.111%; } }
+  &.ten-cols { .column { width: 10%; } }
+  &.eleven-cols { .column { width: 9.09%; } }
+  &.twelve-cols { .column { width: 8.333%; } } 
+}
+
+.fl-grid {
+  @include clearfix;
+  .column {
+    float: left;
+  }
+}
+
+.ib-grid {
+  letter-spacing: -.27em;
+  .column {
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+  }
+}
+
+.tb-grid {
+  display: table;
+  width: 100%;
+  
+  .tb-row {
+    display: table-row;
+
+    .tb-cell {
+      display: table-cell;
+    }
+  }
+}
+
+.print {
+  display: none;
+}
+
+/* Buttons */
+
+button.hidden {
+  display: none !important;
+}
+
+.ui-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  overflow: visible;
+  text-decoration: none;
+  @include user-select(none);
+}
+
+.ui-selectmenu-text {
+  display: inline-block;
+  margin-right: 22px;
+  @include transition(all .2s ease);
+}
+
+.ui-selectmenu-button {
+
+  &.ui-button {
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .ui-icon {
+
+    &:before {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      content: '\4b';
+      font-size: 5px;
+      color: $col-bg-dark_icon;
+      @include icons;
+      @include translate3d(0,-50%,0);
+      @include transition(color .2s ease);
+    }
+  }
+}
+
+.ui-widget-content {
+  background: $col-wh;
+  border: 1px solid $col-bg-light_addnl;
+  overflow: hidden;
+  @include border-radius(4px);
+  @include box-shadow(3px, 5px, 15px, 0px, rgba(0,0,0,0.25));
+
+  .ui-state-active {
+    background-color: $col-bg-light_addnl;
+  }
+}
+
+.ui-selectmenu-menu {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.ui-selectmenu-open {
+  display: block;
+}
+
+.ui-front {
+  z-index: 100;
+}
+.ui-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  display: block;
+  outline: 0;
+
+  .ui-menu-item {
+    margin: 0;
+    cursor: pointer;
+    font-size: $fz_m - 1;
+  }
+
+  .ui-menu-item-wrapper {
+    position: relative;
+    padding: 10px 15px;
+  }
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.ui-autocomplete {
+  position: fixed !important;
+  overflow-y: scroll;
+  max-height: 50vh;
+  z-index: 10000;
+  @include border-radius(0);
+  -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+    -ms-box-shadow: none;
+     -o-box-shadow: none;
+        box-shadow: none;
+}
+
+/* Old browser message */
+
+#old-browsers {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #e83b3d;
+  font-family: $ff_main;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+#old-browsers a {
+  color: #fff;
+}
+
+#old-browsers a:hover {
+  color: #000;
+}

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&subset=cyrillic');
+
+@font-face {
+  font-family: 'icons';
+  src:  url('../fonts/icons.eot?pphgez');
+  src:  url('../fonts/icons.eot?pphgez#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?pphgez') format('truetype'),
+    url('../fonts/icons.woff?pphgez') format('woff'),
+    url('../fonts/icons.svg?pphgez#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  @include icons;
+}
+
+.icon-home-slider-left:before {
+  content: "\61";
+  font-size: 42px;
+}
+.icon-home-slider-right:before {
+  content: "\62";
+  font-size: 42px;
+}
+.icon-home-adv-left:before {
+  content: "\63";
+  font-size: 32px;
+}
+.icon-home-adv-right:before {
+  content: "\64";
+  font-size: 32px;
+}
+.icon-gallery-left:before {
+  content: "\65";
+  font-size: 28px;
+}
+.icon-gallery-right:before {
+  content: "\66";
+  font-size: 28px;
+}
+.icon-catalog-filters-left:before {
+  content: "\67";
+  font-size: 22px;
+}
+.icon-catalog-filters-right:before {
+  content: "\68";
+  font-size: 22px;
+}
+.icon-prev-article:before {
+  content: "\69";
+  font-size: 14px;
+}
+.icon-next-article:before {
+  content: "\6a";
+  font-size: 14px;
+}
+.icon-next-quote:before {
+  content: "\6b";
+  font-size: 14px;
+}
+.icon-breadcrumb-arrow:before {
+  content: "\6c";
+  font-size: 8px;
+}
+.icon-subscribe:before {
+  content: "\6d";
+  font-size: 10px;
+}
+.icon-fav-menu-small:before {
+  content: "\6e";
+  font-size: 16px;
+}
+.icon-fav-menu-small-fill:before {
+  content: "\6f";
+  font-size: 16px;
+}
+.icon-fav-menu-small-cut:before {
+  content: "\70";
+  font-size: 16px;
+}
+.icon-fav-menu-big:before {
+  content: "\71";
+  font-size: 24px;
+}
+.icon-fav-menu-big-fill:before {
+  content: "\72";
+  font-size: 24px;
+}
+.icon-fav-menu-big-cut:before {
+  content: "\73";
+  font-size: 24px;
+}
+.icon-fav-catalog:before {
+  content: "\74";
+  font-size: 28px;
+  color: rgba(255,255,255,.75);
+  @include transition(200ms);
+}
+.icon-fav-catalog:hover:before {
+  color: $col-brand-addnl;
+}
+.icon-fav-catalog-fill:before {
+  content: "\75";
+  font-size: 28px;
+}
+.icon-fav-object:before {
+  content: "\76";
+  font-size: 31px;
+}
+.icon-fav-object-fill:before {
+  content: "\77";
+  font-size: 31px;
+}
+.icon-search-menu-small:before {
+  content: "\78";
+  font-size: 16px;
+}
+.icon-search-menu-big:before {
+  content: "\79";
+  font-size: 24px;
+}
+.icon-search-main:before {
+  content: "\7a";
+  font-size: 21px;
+}
+.icon-search-blog:before {
+  content: "\41";
+  font-size: 19px;
+}
+.icon-question:before {
+  content: "\42";
+  font-size: 13px;
+}
+.icon-help:before {
+  content: "\43";
+  font-size: 13px;
+}
+.icon-phone:before {
+  content: "\44";
+  font-size: 13px;
+}
+.icon-chat:before {
+  content: "\45";
+  font-size: 24px;
+}
+.icon-house:before {
+  content: "\46";
+  font-size: 16px;
+}
+.icon-bedroom:before {
+  content: "\47";
+  font-size: 16px;
+}
+.icon-map:before {
+  content: "\48";
+  font-size: 18px;
+}
+.icon-blocks-view:before {
+  content: "\49";
+  font-size: 18px;
+}
+.icon-list-view:before {
+  content: "\4a";
+  font-size: 18px;
+}
+.icon-dropdown-list:before {
+  content: "\4b";
+  font-size: 6px;
+}
+.icon-scroll-down:before {
+  content: "\4c";
+  font-size: 19px;
+}
+.icon-down-link:before {
+  content: "\4d";
+  font-size: 13px;
+}
+.icon-next-quote-skew:before {
+  content: "\4e";
+  font-size: 14px;
+}
+.icon-subscribe-skew:before {
+  content: "\4f";
+  font-size: 10px;
+}
+.icon-ul:before {
+  content: "\50";
+  font-size: 19px;
+}
+.icon-ol:before {
+  content: "\51";
+  font-size: 19px;
+}
+.icon-fullscreen:before {
+  content: "\52";
+  font-size: 22px;
+}
+.icon-marker:before {
+  content: "\53";
+  font-size: 25px;
+}
+.icon-quote:before {
+  content: "\54";
+  font-size: 14px;
+}
+.icon-scroll-table:before {
+  content: "\55";
+  font-size: 14px;
+}
+.icon-fb:before {
+  content: "\430";
+}
+.icon-vk:before {
+  content: "\431";
+}
+.icon-tw:before {
+  content: "\432";
+}
+.icon-ok:before {
+  content: "\433";
+}
+.icon-gplus:before {
+  content: "\434";
+}
+.icon-insta:before {
+  content: "\435";
+}
+.icon-ytube:before {
+  content: "\436";
+}
+.icon-tel:before {
+  content: "\437";
+}
+.icon-fbm:before {
+  content: "\438";
+}
+.icon-wha:before {
+  content: "\439";
+}
+.icon-vb:before {
+  content: "\43a";
+}
+.icon-skype:before {
+  content: "\43b";
+}
+.icon-more:before {
+  content: "\43c";
+}

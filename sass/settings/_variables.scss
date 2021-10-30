@@ -1,0 +1,45 @@
+/* Цвета */
+
+$col-bl: #000;
+$col-wh: #fff;
+$col-red: #ec004e;
+$col-purple: #bf66a7;
+
+$col-brand_main: #38a9e0;
+$col-brand_addnl: #66bf75;
+$col-brand_main__light: #7dc8eb;
+
+$col-link_main: $col-brand_main;
+$col-link_addnl: $col-brand_addnl;
+
+$col-link_main__hover: $col-brand_addnl;
+$col-link_addnl__hover: $col-brand_main;
+
+$col-bg-dark_main: #303f48;
+$col-bg-dark_addnl: #293640;
+$col-bg-dark_icon: #475258;
+
+$col-bg-light_main: #f8fafd;
+$col-bg-light_addnl: #d1dee4;
+
+/* Шрифты */
+
+$ff_main: 'Montserrat', Helvetica, Arial, sans-serif;
+
+$fz_s: 12px;
+$fz_m: 14px;
+$fz_b: 18px;
+
+$fz-h_s: 24px;
+$fz-h_m: 30px;
+$fz-h_b: 36px;
+
+$lh_s: 1.3;
+$lh_m: 1.6;
+$lh_b: 1.8;
+
+/* Элементы */
+
+$ind_s: 10px; // Отступы
+$ind_m: 20px;
+$ind_b: 40px;

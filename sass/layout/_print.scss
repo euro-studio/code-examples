@@ -1,0 +1,277 @@
+@media only print {
+
+  a {
+    color: $col-bl !important;
+    border-bottom: none;
+  }
+
+  .print {
+    display: block;
+  }
+
+  .print-header {
+    position: relative;
+    margin-bottom: 5mm;
+    padding: 0 0 4mm;
+    border-bottom: 1px solid $col-bg-light_addnl;
+    @include clearfix;
+
+    &__logo {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 50mm;
+      padding-bottom: 2.5mm;
+      @include translate3d(0,-50%,0);
+    }
+
+    &__contacts {
+      float: right;
+      text-align: right;
+      font-size: $fz_s - 2;
+    }
+  }
+
+  .webpage {
+    display: block;
+    margin-top: 5mm;
+    padding-top: 5mm;
+    border-top: 1px solid $col-bg-light_addnl;
+    @include clearfix;
+
+    img {
+      float: left;
+      display: block;
+      padding-right: 2.5mm;
+      height: 14mm;
+    }
+
+    span {
+      float: left;
+      display: block;
+      font-size: ($fz_s - 2);
+      padding-top: 3mm;
+      line-height: 4mm;
+    }
+  }
+
+  .header-menu,
+  .fixed-header,
+  .request-selection,
+  .footer {
+    display: none !important;
+  }
+
+  .page-object {
+
+
+    .object {
+
+      &__gallery,
+      &__header {
+        display: none !important;
+      }
+
+      &__desc,
+      &__intro {
+        padding: 0 !important;
+      }
+
+      &__desc {
+        font-size: $fz_s !important;
+
+        &:before {
+          content: none !important;
+        }
+      }
+
+      &__content {
+        margin: 0 5mm !important;
+
+        h2 {
+          font-size: ($fz-h_s - 3) !important;
+          color: $col-bg-dark_icon;
+        }
+      }
+    }
+
+    .intro {
+
+      &__fav,
+      &__pdf-print,
+      &__btns {
+        display: none !important;
+      }
+
+      &__announce {
+        @include clearfix;
+      }
+
+      &__text {
+        float: left;
+        width: 50%;
+      }
+
+      &__thumb {
+        float: right;
+        width: 50%;
+        padding-right: 5mm;
+
+        img {
+          display: block;
+          @include border-radius(4px);
+        }
+      }
+
+      &__actions {
+        margin: 0 5mm !important;
+        padding-bottom: 5mm !important;
+        line-height: 1 !important;
+      }
+
+      &__id {
+        font-size: $fz_s !important;
+        padding-left: 0 !important;
+      }
+
+      &__title {
+        margin: 0 5mm;
+
+        h1 {
+          font-size: $fz_b !important;
+          font-weight: 600;
+        }
+      }
+
+      &__price {
+        margin: 5mm !important;
+
+        span {
+          font-size: $fz_b !important;
+          color: $col-brand-main !important;
+
+          &.request {
+            color: $col-brand-main !important;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+          }
+
+          span {
+            font-size: $fz-h_s !important;
+            color: $col-brand-main !important;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+          }
+        }
+      }
+
+      &__location {
+        margin: 0 5mm 0 !important;
+        font-size: $fz_s !important;
+      }
+
+      &__map {
+        display: none;
+      }
+    }
+
+    .params {
+      padding: 5mm 7.5mm 6mm !important;
+      margin: 5mm -5mm !important;
+      border-top: 1px solid $col-bg-light_addnl;
+      border-bottom: 1px solid $col-bg-light_addnl;
+      font-size: $fz_s !important;
+      @include clearfix;
+
+      &__column {
+        float: left;
+        width: 50%;
+      }
+
+      &__section {
+        padding: 0 2.5mm !important;
+        margin-bottom: 2mm !important;
+
+        .abbr {
+          display: none !important;
+        }
+
+        .full {
+          display: inline !important;
+        }
+      }
+
+      &__value {
+        width: 27.5mm !important;
+      }
+    }
+
+    .introtext {
+      margin: 0 5mm !important;
+      margin-bottom: 5mm !important;
+      padding: 0 0 4px 0 !important;
+      border-left: none !important;
+      font-size: $fz_m + 1 !important;
+      color: $col-bl !important;
+    }
+
+   .features {
+
+      li {
+        float: left !important;
+        padding-right: 25px !important;
+        width: 33.333% !important;
+      }
+    }
+
+    .distances {
+      page-break-inside: avoid !important;
+      padding: 5mm !important;
+      margin: 5mm -5mm !important;
+      background: none !important;
+      border-top: 1px solid $col-bg-light_addnl !important;
+      border-bottom: 1px solid $col-bg-light_addnl !important;
+
+      &__item {
+        width: 16.666% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &:before {
+          content: none !important;
+        }
+      }
+
+      &__value {
+        font-size: $fz_m + 2 !important;
+        margin-top: 0 !important;
+      }
+
+      &__note {
+        color: $col-bg-dark_icon !important;
+      }
+    }
+
+    .print-map {
+      width: 50%;
+      padding-left: 5mm;
+    }
+
+    .map-container,
+    .new-search,
+    .similar-objects {
+      display: none !important;
+    }
+  }
+
+  #jvlabelWrap {
+    display: none !important;
+  }
+}
+
+@page {
+  margin: 15mm;
+}
