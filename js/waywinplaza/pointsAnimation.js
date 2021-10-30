@@ -1,4 +1,4 @@
-// Динамические круги
+// Динамические круги 
 
 	if ($('#index_container').length || $('#eu_container').length) {
 
