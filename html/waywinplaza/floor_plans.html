@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- (c) Eugene's Rozhnenkov studio | euro-studio@yandex.ru -->
+<html lang="[[++cultureKey:is=`en`:then=`en`:else=`ru`]]">
+
+<head>
+
+    <base href="[[++site_url]]">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>[[pageTitle]]</title>
+    <meta name="description" content="[[*userDescription]]">
+    <meta name="keywords" content="[[*userKeywords]]">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/src/css/preloader.css?v=3" type="text/css">
+    <link rel="stylesheet" href="/src/css/reset.css?v=3" type="text/css">
+    <link rel="stylesheet" href="/src/css/common.css?v=6" type="text/css">
+
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/src/js/preloader.js?v=2"></script>
+
+</head>
+
+<body class="[[*id:is=`1`:or:is=`2`:or:is=`3`:or:is=`4`:or:is=`7`:or:is=`8`:then=`dark`:else=`light`]] [[++cultureKey:is=`en`:then=`en`:else=`ru`]]">
+
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-text">[[++cultureKey:is=`en`:then=`Loading...`:else=`Загрузка...`]]</div>
+    <div class="loader-section"></div>
+</div>
+
+<div id="main_container">
+
+    <div id="fix_menu" class="dark">
+        [[!Wayfinder?
+        &startId=`0`
+        &level=`1`
+        ]]
+    </div>
+
+    <div id="fix_top">
+        <div class="logo">
+            <a class="logo" href="[[++site_url]]">
+                <div class="img">
+                    <img src="/src/img/logo.png" alt="Agios Plaza">
+                </div>
+                <div>
+                    <span>Waywin</span>
+                    <span>Plaza</span>
+                </div>
+            </a>
+            <div>
+                [[BabelLinks? &showCurrent=`0` &tpl=`BubelLinksTpl`]]
+            </div>
+        </div>
+        <div class="phone">
+            <a href="tel:+35725351888">+357 99 715 151</a>
+        </div>
+        <div class="requests">
+            [[++cultureKey:is=`en`:then=`
+            <a class="call popup" href="[[~13]]">Request a call</a>
+            <a class="viewing popup" href="[[~15]]">Request a viewing</a>
+            `:else=`
+            <a class="call popup" href="[[~14]]">Заказать звонок</a>
+            <a class="viewing popup" href="[[~16]]">Заказать просмотр</a>
+            `]]
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="floors_container">
+            <div id="floor-2" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor-2.svg" alt="">
+                    </div>
+                    <div class="svg"></div>
+                </div>
+            </div>
+            <div id="floor-1" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor-1.svg" alt="">
+                    </div>
+                    <div class="svg"></div>
+                </div>
+            </div>
+            <div id="floor0" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor0.svg" alt="">
+                    </div>
+                    <div class="svg"></div>
+                </div>
+            </div>
+            <div id="floorm" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floorm.svg" alt="">
+                    </div>
+                    <div class="svg">
+                        <svg viewBox="0 0 1858.01 1904.96">
+                            <a>
+                                <path class="free" data-info="mfloor1"
+                                      d="M533.61,1499.8v655.7h514v-211h250.5v223.3c34.16-24,66-2,66-2V1796h180V1233.34C1525,1245.34,1135.27,1522.8,533.61,1499.8Zm865.66,179h-104v-35.73h6V1609h-6v-37.2h104Z"
+                                      transform="translate(-469.11 -525.8)"/>
+                            </a>
+                            <a>
+                                <path class="free" data-info="mfloor2"
+                                      d="M1554.11,1796h404.16c-41-70.2,53-114.2,111.34-116.2v-56.3h6v-50h-6v-6H2311l.11-353.16c-410-218.67-737.84,1-757,13V1624l64.16-.2v93l-64.16.6Z"
+                                      transform="translate(-469.11 -525.8)"/>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="floor1" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor1.svg" alt="">
+                    </div>
+                    <div class="svg">
+                        <svg viewBox="0 0 1889 1889.14">
+                            <a>
+                                <polygon class="free" data-info="1floor1"
+                                         points="23 1192.18 317.16 1192.18 317 1192.38 565 1191.84 565 1083.38 595 1083.38 594.99 1071.38 605 1071.38 604.89 1094.2 599.84 1094.2 599.84 1121.17 604.82 1121.17 604.5 1192.38 825 1191.81 825.23 1119.38 857 1119.62 857 1110.38 862 1110.38 862 1036.38 857 1036.39 857 1014.38 829 1014.38 829 982.38 605 982.38 604.99 998.38 595 998.38 595.01 248.38 41 248.38 41 736.38 23 736.38 23 988.38 41 988.38 41 1162.38 23 1162.38 23 1192.18"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="1floor2"
+                                         points="1105 972.38 1017 972.38 1016.99 977.38 943 977.38 943 972.38 605 972.38 605 248.38 1105 248.38 1105 972.38"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="1floor3"
+                                         points="783 1535.08 783 1276.38 857 1276.38 862 1276.38 862 1202.38 857 1202.38 857 1202.38 327 1202.39 23 1202.39 23 1408.38 23 1412.38 41 1412.38 41 1530.38 105 1530.38 105 1535.08 783 1535.08"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="1floor4"
+                                         points="1110 1004.38 1110 1078.38 1115 1078.38 1114.99 1082.38 1179 1082.38 1420.16 1082.18 1420 1174.38 1540.74 1174.38 1580.19 1154.57 1626 1144.88 1626 1026.38 1631 1026.38 1631 982.38 1613 982.38 1613 964.38 1631 964.38 1630.99 966.38 1653 966.35 1653 540.38 1658 540.39 1658 342.38 1653 342.38 1652.5 248.38 1115 248.39 1115.15 1004.38 1110 1004.38"/>
+                            </a>
+                            <a>
+                                <path class="open-veranda" data-info="1floor10"
+                                      d="M2312.11,790.5V586c-481.84-161.34-792,194-792,194h582v10.5Z"
+                                      transform="translate(-439.11 -541.62)"/>
+                            </a>
+                            <a>
+                                <polygon class="close-veranda" data-info="1floor5"
+                                         points="1873 248.88 1873 552.38 1695 552.38 1695 970.38 1873 970.38 1873 1026.38 1631.01 1026.38 1631 976.38 1663 976.38 1663 540.38 1658 540.38 1658 342.38 1663 342.38 1663 248.88 1873 248.88"/>
+                            </a>
+                            <a>
+                                <path class="open-veranda" data-info="1floor6"
+                                      d="M1374.11,2184l24,38,12,56-.5,42,212.5-.17,346-513.83h-100v10h-92v-5h-130v5h-80v98h-188v128h6v28h-10Zm296.4-193.37a51,51,0,1,1-51-51A51,51,0,0,1,1670.51,1990.63Z"
+                                      transform="translate(-439.11 -541.62)"/>
+
+                            </a>
+                            <a>
+                                <polyline class="close-veranda" data-info="1floor7"
+                                          points="317 1613.38 317 1602.18 335.16 1602.18 335.16 1613.68 595.16 1613.68 595.16 1602.18 613.16 1602.18 613.16 1613.68 789 1613.68 789 1776.38 815 1776.38 817 1716.38 831 1672.38 851 1642.38 851 1540.18 782.38 1540.18 782.38 1535.08 105.16 1535.08 105.16 1540.38 89 1540.38 89 1540.38 41 1540.38 40.83 1776.38 329 1776.38 329 1620.38 317 1620.38 317 1613.38"/>
+                                <polygon class="garden" data-info="1floor8"
+                                         points="783.41 1620.18 783.41 1778.38 334.59 1778.38 334.59 1620.18 595.07 1620.18 595.07 1620.98 613.1 1620.98 613.1 1620.18 783.41 1620.18"/>
+                            </a>
+                            <a>
+                                <rect class="garden" data-info="1floor9" x="2023.11" y="1217" width="406" height="172"
+                                      transform="translate(484 2987.5) rotate(-90)"/>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="floor2" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor2.svg" alt="">
+                    </div>
+                    <div class="svg">
+                        <svg viewBox="0 0 1888.01 1869.75">
+                            <a>
+                                <polygon class="free" data-info="2floor1"
+                                         points="783 1515.69 783 1257 857 1257 862 1257 862 1183 857 1183 857 1183 327 1183.01 23 1183.01 23 1389 23 1393 41 1393 41 1511 105 1511 105 1515.69 783 1515.69"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="2floor2"
+                                         points="23 1172.8 317.16 1172.8 317 1173 565 1172.46 565 1064 595 1064 594.99 1052 605 1052 604.89 1074.81 599.84 1074.81 599.84 1101.78 604.81 1101.78 604.5 1173 825 1172.42 825.23 1100 857 1100.23 857 1091 862 1091 862 1017 857 1017.01 857 995 829 995 829 963 605 963 604.99 979 595 979 595.01 229 41 229 41 717 23 716.99 23 969 41 969 41 1143 23 1142.99 23 1172.8"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="2floor3"
+                                         points="1105 953 1017 953 1016.99 958 943 958 943 953 605 953 605 229 1105 229 1105 953"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="2floor4"
+                                         points="1110 985 1110 1059 1115 1059 1114.99 1063 1179 1063 1420.16 1062.8 1420 1155 1540.73 1155 1580.19 1135.18 1626 1125.5 1626 1007 1631 1007 1631 963 1613 963 1613 945 1631 945 1630.99 947 1653 946.97 1653 521 1658 521.01 1658 323 1653 323 1652.5 229 1115 229.01 1115.15 985 1110 985"/>
+                            </a>
+                            <a>
+                                <polygon class="close-veranda" data-info="2floor5"
+                                         points="41 1757 329 1757 329 1601 335 1601 335 1595 595 1597 595 1601 613 1601 612.99 1595 850.16 1595 850.16 1521.8 783 1521.8 783 1516 105 1516 105 1521 41 1521 41 1757"/>
+                            </a>
+                            <a>
+                                <polygon class="close-veranda" data-info="2floor6"
+                                         points="1631.01 1007 1873 1007 1873 951 1695 951 1695 533 1873 533 1873 229 1663 229 1663 323 1658 323 1658 521 1663 520.99 1663 957 1631 957 1631.01 1007"/>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="floor3" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor3.svg" alt="">
+                    </div>
+                    <div class="svg">
+                        <svg viewBox="0 0 1888.01 1869.75">
+                            <a>
+                                <polygon class="free" data-info="3floor1"
+                                         points="783 1515.69 783 1257 857 1257 862 1257 862 1183 857 1183 857 1183 327 1183.01 23 1183.01 23 1389 23 1393 41 1393 41 1511 105 1511 105 1515.69 783 1515.69"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="3floor2"
+                                         points="23 1172.8 317.16 1172.8 317 1173 565 1172.46 565 1064 595 1064 594.99 1052 605 1052 604.89 1074.81 599.84 1074.81 599.84 1101.78 604.81 1101.78 604.5 1173 825 1172.42 825.23 1100 857 1100.23 857 1091 862 1091 862 1017 857 1017.01 857 995 829 995 829 963 605 963 604.99 979 595 979 595.01 229 41 229 41 717 23 716.99 23 969 41 969 41 1143 23 1142.99 23 1172.8"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="3floor3"
+                                         points="1105 953 1017 953 1016.99 958 943 958 943 953 605 953 605 229 1105 229 1105 953"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="3floor4"
+                                         points="1110 985 1110 1059 1115 1059 1114.99 1063 1179 1063 1420.16 1062.8 1420 1155 1540.73 1155 1580.19 1135.18 1626 1125.5 1626 1007 1631 1007 1631 963 1613 963 1613 945 1631 945 1630.99 947 1653 946.97 1653 521 1658 521.01 1658 323 1653 323 1652.5 229 1115 229.01 1115.15 985 1110 985"/>
+                            </a>
+                            <a>
+                                <polygon class="close-veranda" data-info="3floor5"
+                                         points="41 1757 329 1757 329 1601 335 1601 335 1595 595 1597 595 1601 613 1601 612.99 1595 850.16 1595 850.16 1521.8 783 1521.8 783 1516 105 1516 105 1521 41 1521 41 1757"/>
+                            </a>
+                            <a>
+                                <polygon class="close-veranda" data-info="3floor6"
+                                         points="1631.01 1007 1873 1007 1873 951 1695 951 1695 533 1873 533 1873 229 1663 229 1663 323 1658 323 1658 521 1663 520.99 1663 957 1631 957 1631.01 1007"/>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="floor4" class="floor_block">
+                <div class="floor">
+                    <div class="img">
+                        <img class="floor" src="/src/img/floor4.svg" alt="">
+                    </div>
+                    <div class="svg">
+                        <svg viewBox="0 0 1888.01 1869.75">
+                            <a>
+                                <polygon class="free" data-info="4floor1"
+                                         points="857 1339 862 1339 862 1303 857 1303 857 1183.5 848.64 1183.5 848.64 1159 317.03 1159 317.03 963.8 23.16 963.8 23.16 968.8 41.16 968.8 41.16 1142.8 23 1143 23 1381 89 1381 89 1371 107 1371 107 1382 317 1382 317 1371 335 1371 335 1382 595 1382 595 1371 857 1371 857 1339"/>
+                            </a>
+                            <a>
+                                <polygon class="free" data-info="4floor2"
+                                         points="867 1164 941 1164 941 1159 1105.16 1158.8 1105.16 1150.8 1112.16 1150.8 1112.16 967 1105 967 1105 949 1112 949 1112 755 1105 755 1105 737 1113 737 1113.16 542.8 1105 543 1105 532 867 532 867 543 854.16 542.8 854.16 736.8 867.16 736.8 867.16 754.8 849.16 754.8 849.16 743.8 613.16 743.8 613.16 736.8 602 737 613 737 613 755 595 755 595 744 335 744 335 755 317 755 317 744 107 744 107 755 89 755 89 745 23 745 23 957 327.16 957 327.16 1063 327.16 1153 867 1153 867 1164"/>
+                            </a>
+                            <a>
+                                <path class="free" data-info="4floor6"
+                                      d="M1562.27,1088.8h234v11h18v-11h238v11h11v581s-52,2-91,35h-222v5h-75v-5h-57v-94h-56Z"
+                                      transform="translate(-439.11 -561)"/>
+                            </a>
+                            <a>
+                                <polygon class="open-veranda" data-info="4floor3"
+                                         points="1117.16 521 1117.16 235 47 235 47 713 23 713 23 741 89 741 89 733 107 732.99 107 740 317 740 317 733 335 732.99 335 740 595 740 595 733 613.16 732.8 613.16 739.8 849.16 739.8 849.16 732.8 854.16 732.8 854.16 538.8 849 538.8 849 521 867 520.99 867 528 1105 528 1105 521 1117.16 521"/>
+                            </a>
+                            <a>
+                                <polygon class="open-veranda" data-info="4floor5"
+                                         points="1123.16 234.8 1873 235 1873 533 1695 533 1695.16 950.8 1869.16 950.8 1869.16 962.8 1873.16 962.8 1873.16 1006.8 1630.16 1006.8 1630.16 1118.8 1624.16 1119.8 1624.16 962.8 1631.16 962.8 1631.16 944.8 1624.16 944.8 1624.16 750.8 1631.16 750.8 1631.16 732.8 1624.16 732.8 1624.16 538.8 1631.16 538.8 1631.16 520.8 1613.16 520.8 1613.16 527.8 1375.16 527.8 1375.16 520.8 1357.16 520.8 1357.16 527.8 1123 527.8 1123.16 234.8"/>
+                            </a>
+                            <a>
+                                <polygon class="open-veranda" data-info="4floor4"
+                                         points="47 1757 329 1757 329 1601 335 1600.99 335 1595 595 1595 595 1583 602 1583.01 602 1389 595 1389 595 1382 335 1382 335 1389 317 1389 317 1382 107 1382 107 1389 89 1389 89 1381 23 1381 23 1397 47 1397 47 1757"/>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="ground_floor">
+                <div class="img">
+                    <img src="/src/img/ground-floor.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="floors_legend">
+            <div class="bg"></div>
+            <div>
+                <div class="free"></div>
+                For sale
+            </div>
+            <div>
+                <div class="reserved"></div>
+                Reserved
+            </div>
+            <div>
+                <div class="sold"></div>
+                Sold
+            </div>
+            <div>
+                <div class="open-veranda"></div>
+                Open veranda
+            </div>
+            <div>
+                <div class="close-veranda"></div>
+                Сovered veranda
+            </div>
+            <div>
+                <div class="garden"></div>
+                Landscaping
+            </div>
+        </div>
+
+        <div id="floors_nav">
+            <div class="header">Floors</div>
+            <div class="slider">
+                <div class="control"></div>
+                <div class="white">
+                    <div class="floors_scroll">
+                        <div class="nav_floor"><a class="anchor" href="#floor4"><span>4</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floor3"><span>3</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floor2"><span>2</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floor1"><span>1</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floorm"><span>M</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floor0"><span>0</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floor-1"><span>-1</span></a></div>
+                        <div class="nav_floor"><a class="anchor" href="#floor-2"><span>-2</span></a></div>
+                    </div>
+                </div>
+                <div class="black">
+                    <div class="nav_floor"><a class="anchor" href="#floor4"><span>4</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floor3"><span>3</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floor2"><span>2</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floor1"><span>1</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floorm"><span>M</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floor0"><span>0</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floor-1"><span>-1</span></a></div>
+                    <div class="nav_floor"><a class="anchor" href="#floor-2"><span>-2</span></a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="floors_info">
+            <div class="info_block">
+                [[$floorsInfoEn]]
+            </div>
+            <div class="compas">
+                <img class="floor" src="/src/img/compas-en.png" alt="">
+            </div>
+            <div class="preview">* Preliminary internal planning. Subject to change.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="top_arrow"></div>
+
+<div id="layout"></div>
+<div id="popup_page">
+    <div id="popup_content"></div>
+    <div class="close"></div>
+</div>
+
+<script type="text/javascript" src="/src/js/scripts.js?v=3"></script>
+
+</body>
+</html>
