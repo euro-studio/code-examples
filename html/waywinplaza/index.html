@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- (c) Eugene's Rozhnenkov studio | euro-studio@yandex.ru -->
+<html lang="[[++cultureKey:is=`en`:then=`en`:else=`ru`]]">
+
+<head>
+
+    <base href="[[++site_url]]">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>[[pageTitle]]</title>
+    <meta name="description" content="[[*userDescription]]">
+    <meta name="keywords" content="[[*userKeywords]]">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/src/css/preloader.css?v=3" type="text/css">
+    <link rel="stylesheet" href="/src/css/reset.css?v=3" type="text/css">
+    <link rel="stylesheet" href="/src/css/common.css?v=6" type="text/css">
+
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/src/js/preloader.js?v=2"></script>
+
+</head>
+
+<body class="[[*id:is=`1`:or:is=`2`:or:is=`3`:or:is=`4`:or:is=`7`:or:is=`8`:then=`dark`:else=`light`]] [[++cultureKey:is=`en`:then=`en`:else=`ru`]]">
+
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-text">[[++cultureKey:is=`en`:then=`Loading...`:else=`Загрузка...`]]</div>
+    <div class="loader-section"></div>
+</div>
+
+<div id="main_container">
+
+    <div id="fix_menu" class="dark">
+        [[!Wayfinder?
+        &startId=`0`
+        &level=`1`
+        ]]
+    </div>
+
+    <div id="fix_top">
+        <div class="logo">
+            <a class="logo" href="[[++site_url]]">
+                <div class="img">
+                    <img src="/src/img/logo.png" alt="Agios Plaza">
+                </div>
+                <div>
+                    <span>Waywin</span>
+                    <span>Plaza</span>
+                </div>
+            </a>
+            <div>
+                [[BabelLinks? &showCurrent=`0` &tpl=`BubelLinksTpl`]]
+            </div>
+        </div>
+        <div class="phone">
+            <a href="tel:+35725351888">+357 99 715 151</a>
+        </div>
+        <div class="requests">
+            [[++cultureKey:is=`en`:then=`
+            <a class="call popup" href="[[~13]]">Request a call</a>
+            <a class="viewing popup" href="[[~15]]">Request a viewing</a>
+            `:else=`
+            <a class="call popup" href="[[~14]]">Заказать звонок</a>
+            <a class="viewing popup" href="[[~16]]">Заказать просмотр</a>
+            `]]
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="index_container">
+            <div class="layer1">
+                <img src="/src/img/index-1-layer.jpg">
+            </div>
+            <div class="stars"><img src="/src/img/stars.png"></div>
+            <div class="layer2-1">
+                <img src="/src/img/index-2-layer.png">
+            </div>
+            <div class="layer2-2">
+                <img src="/src/img/index-2-layer.png">
+            </div>
+            <div class="layer3">
+                <img class="clouds1" src="/src/img/index-3-layer.png">
+                <img class="clouds2" src="/src/img/index-3-layer.png">
+            </div>
+            <div class="layer4">
+                <div id="events">
+                    <div class="items item1">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Important Details</h2>
+                            <span>Inside the offices there is a convenient system of suspended floors and stretch ceilings, which allows you to quickly and easily adapt the office to the needs of a particular client.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="0" x2="100%" y2="100%">
+                        </svg>
+                    </div>
+                    <div class="items item2 rt">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Design and Comfort</h2>
+                            <span>The complex conveniently combines commercial premises, modern offices and apartments with panoramic glazing and excellent views of the sea, the mountains and the city.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="100%" x2="100%" y2="0">
+                        </svg>
+                    </div>
+                    <div class="items item3">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Electricity Conversion</h2>
+                            <span>Solar panels on the facade of the building generate electricity, which allows you to significantly save on electricity consumption.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="0" x2="100%" y2="100%">
+                        </svg>
+                    </div>
+                    <div class="items item4 rt">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Engineering and Technologies</h2>
+                            <span>The building is equipped with light-absorbing glazing, high ceilings, modern central air conditioning and a ventilation system, high-speed panoramic elevators and open verandas overlooking the sea, the city and the mountains.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="100%" x2="100%" y2="0">
+                        </svg>
+                    </div>
+                    <div class="items item5 rt bt">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Underground Parking</h2>
+                            <span>2-level underground parking with polyurethane epoxy coating for 150 cars with a total area of 5000 m<sup>2</sup>.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="100%" x2="100%" y2="0">
+                        </svg>
+                    </div>
+                    <div class="items item6 bt">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Ground Floor</h2>
+                            <span>The ground floor with a comfortable lounge and a secretary, a shop of exclusive furniture and home decorations as well as a lounge area for a café or a restaurant.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="0" x2="100%" y2="100%">
+                        </svg>
+                    </div>
+                    <div class="items item7 rt">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Apparent Advantages</h2>
+                            <span>Cutting-edge vision in the design of business class commercial areas. From the top floors of the center you can enjoy panoramic views of the mountains, the sea and the city.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="100%" x2="100%" y2="0">
+                        </svg>
+                    </div>
+                    <div class="items item8">
+                        <span class="point"></span>
+                        <div class="text">
+                            <h2>Characteristics of the Building</h2>
+                            <span>The floor space is penetrated by a balcony atrium and an elevator shaft with panoramic glazing, as well as two flights of stairs located on both sides of the elevator hall. Each floor has large balcony areas with open verandas.</span>
+                        </div>
+                        <svg>
+                            <line class="line2" x1="0" y1="0" x2="100%" y2="100%">
+                        </svg>
+                    </div>
+                    <img class="bg" src="/src/img/index-4-layer.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="top_arrow"></div>
+
+<div id="layout"></div>
+<div id="popup_page">
+    <div id="popup_content"></div>
+    <div class="close"></div>
+</div>
+
+<script type="text/javascript" src="/src/js/scripts.js?v=3"></script>
+
+</body>
+</html>
