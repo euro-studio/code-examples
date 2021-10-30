@@ -55,6 +55,7 @@ if ($(window).width() < 980) {
 }
 
 // Ajax ссылки
+
 if ($(window).width() >= 980) {
 	$('body').on('click', 'a.popup', function() {
 
