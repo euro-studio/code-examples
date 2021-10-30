@@ -6,7 +6,7 @@ if (strpos($input, 'd') !== false) {
   $replace = str_replace('m', '', $input);
   $output = ceil(abs($input * 60 / 60000));
   return $output;
-} else {
+} else { 
   $replace = str_replace('w', '', $input);
   $output = ceil(abs($input * 5000 / 60000));
   return $output;
