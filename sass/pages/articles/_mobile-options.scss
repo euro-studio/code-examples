@@ -1,0 +1,77 @@
+.mobile-actions {
+  position: relative;
+  z-index: 2;
+  padding: 12px $ind_m;
+  background-color: $col-wh;
+  font-size: $fz_m - 1;
+  text-align: center;
+  @include clearfix;
+
+  @media only screen and (min-width: 600px) {
+    font-size: $fz_m;
+  };
+
+  @media only screen and (min-width: 980px) {
+    display: none;
+  }
+
+  & > div {
+    padding: 3px 0;
+  }
+
+  a {
+    @include icon-link;
+  }
+
+  .mobile {
+
+    &__subscribe {
+
+      @media only screen and (min-width: 600px) {
+        float: left;
+      }
+    }
+
+    &__links {
+      padding-left: 23px;
+
+      @media only screen and (min-width: 600px) {
+        float: right;
+        padding-left: 0;
+      }
+
+      div {
+        display: inline-block;
+        padding-right: 30px;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &__blog-search {
+      position: relative;
+
+      &:before {
+        content: '\78';
+        position: absolute;
+        top: 50%;
+        left: -23px;
+        padding-right: 0;
+        font-size: 16px;
+        color: $col-bg-dark_icon;
+        @include translate3d(0, -37.5% ,0);
+        @include icons;
+        @include transition(color .2s ease);
+      }
+
+      &:hover {
+
+        &:before {
+          color: $col-brand_addnl;
+        }
+      }
+    }
+  }
+}

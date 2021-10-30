@@ -1,0 +1,527 @@
+.page-contacts {
+  
+  .contacts {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    @include top-line;
+
+    &:before {
+      top: auto;
+      bottom: 0;
+    }
+
+    &__map {  
+      width: 100vw;
+      height: 66.666vh;
+      margin-top: 35px;
+      margin-left: (-$ind_m);
+      overflow: hidden;
+
+      @media screen and (min-width: 980px) {
+        position: absolute;
+        top: 0;
+        left: -33.333vw;
+        width: 33.333vw;
+        height: 100vh;
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      &.fixed {
+        position: fixed;
+        left: 0;
+      }
+
+      #office-map {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__info {
+      position: relative;
+      padding: 0 $ind_m;
+      @include top-line;
+
+      @media only screen and (min-width: 980px) {
+        left: 33.333vw;
+        width: 66.666vw;
+        padding: 0 $ind_b 10px;
+      }
+    }
+  }
+
+  .map {
+
+    &__logo {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      padding: 10px 30px 10px 35px;
+      z-index: 100;
+
+      @media screen and (min-width: 980px) {
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: $col-brand_main;
+        @include skewX(-12deg);
+        @include border-radius(4px);
+      }
+
+      img {
+        display: block;
+        height: 30px;
+      }
+    }
+  }
+
+  .info {
+  
+    &__header {
+      display: none;
+
+      @media only screen and (min-width: 980px) {
+        position: relative;
+        margin: 0 (-$ind_b);
+        min-height: 60px;
+        line-height: 50px;
+        padding: 10px $ind_b 0;
+        border-bottom: 1px solid #e8e8e8;
+        font-size: $fz_s;
+        @include flexbox;
+        @include flex-direction(row);
+        @include justify-content(space-between);
+      }
+
+      a {
+        color: $col-bg-dark_icon !important;
+
+        &:hover {
+          color: $col-brand-addnl !important;
+        }
+      }
+
+      i {
+        line-height: 50px !important;
+      }
+
+      .fixed-header__callback {
+        display: none;
+
+        @media only screen and (min-width: 1100px) {
+          display: block;
+        }
+      }
+
+      .fixed-header__phone {
+        margin-right: 49px + 25;
+      }
+
+      .sitemap-nav {
+        top: 26px;
+        z-index: 10;
+        right: $ind_b;
+      }
+    }
+
+    &__intro {
+      padding: $ind_b  0;
+
+      @media only screen and (min-width: 600px) {
+        padding: ($ind_b + 10)  0;
+      }
+
+      @media only screen and (min-width: 980px) {
+        padding: ($ind_b * 2) 0 ($ind_b * 2 + 10);
+      }
+      
+      @media only screen and (min-width: 1250px) {
+        padding: ($ind_b * 2) $ind_b ($ind_b * 2 + 10);
+      }
+
+      h1 {
+        margin-bottom: 1em;
+
+        @media only screen and (max-width: 979px) {
+          font-size: $fz-h_m;
+        }
+
+        @media only screen and (max-width: 599px) {
+          font-size: $fz-h_s;
+        }
+      }
+
+      a {
+        white-space: nowrap;
+      }
+
+      a[href^=tel] {
+        color: $col-brand_main !important;
+      }
+
+      .anchor-link {
+        position: relative;
+
+        &:after {
+          content: '\4d';
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          padding-left: 5px;
+          font-size: $fz_m;
+          @include translate3d(0, -50%, 0);
+          @include icons;
+        }
+      }
+    }
+
+    &__how-contact {
+      font-size: $fz_m + 2;
+
+      @media screen and (min-width: 600px) {
+        font-size: $fz_b;
+      }
+
+      @media screen and (min-width: 980px) {
+        font-size: $fz_b + 3;
+      }
+    }
+
+    &__details {
+      margin-top: 25px;
+
+      @media screen and (min-width: 600px) {
+        margin-top: 35px;
+      }
+
+      .column {
+        position: relative;
+        padding-left: $ind_m + 34;
+
+        @media only screen and (max-width: 599px) {
+          width: 100%;
+        }
+
+        @media screen and (min-width: 980px) {
+          padding-left: $ind_b + 34;
+        }
+
+        & + .column {
+          padding-left: $ind_m + 36;
+
+          @media only screen and (max-width: 599px) {
+            margin-top: 20px;
+          }
+
+          @media screen and (min-width: 980px) {
+            padding-left: $ind_b + 36;
+          }
+        }
+      }
+
+      &-address,
+      &-schedule {
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: $ind_m;
+
+          @media screen and (min-width: 980px) {
+            left: $ind_b;
+          }
+        }
+      }
+
+      &-address {
+        
+        &:before {
+          width: 22px;
+          height: 32px;
+          background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAzMiI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6IzMwM2Y0ODt9LmJ7ZmlsbDojMzhhOWUwO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1jb250YWN0cy1hZGRyZXNzPC90aXRsZT48cGF0aCBjbGFzcz0iYSIgZD0iTTIxMCwyNTJhOSw5LDAsMCwxLDcuNywxMy42NGwtLjM3LjYyTDIxMCwyNzguMThsLTctMTEuNGgwbC0uNjktMS4xNEE5LDksMCwwLDEsMjEwLDI1Mm0wLTJhMTEsMTEsMCwwLDAtOS40MSwxNi42N2gwTDIxMCwyODJsOS40Mi0xNS4zMmgwQTExLDExLDAsMCwwLDIxMCwyNTBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTk5IC0yNTApIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0yMTAsMjU4YTMsMywwLDEsMS0zLDMsMywzLDAsMCwxLDMtM20wLTJhNSw1LDAsMSwwLDUsNSw1LDUsMCwwLDAtNS01WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE5OSAtMjUwKSIvPjwvc3ZnPg==) 0 0 no-repeat;
+        }
+      }
+
+      &-schedule {
+        
+        &:before {
+          width: 24px;
+          height: 25px;
+          background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNS40MSAyNS41MSI+PGRlZnM+PHN0eWxlPi5hLC5je2ZpbGw6bm9uZTtzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MnB4O2ZpbGwtcnVsZTpldmVub2RkO30uYXtzdHJva2U6IzMwM2Y0ODt9LmJ7ZmlsbDojMzAzZjQ4O30uY3tzdHJva2U6IzM4YTllMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmljb24tY29udGFjdHMtc2NoZWR1bGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJhIiBkPSJNMjI4LjUsMjUzLjVsLTQsNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIyMy43OSAtMjUyLjc5KSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNMjQ0LjUsMjUzLjVsNCw0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjIzLjc5IC0yNTIuNzkpIi8+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMjcuNSwyNzguM2MwLTIsNC0zLjYsOS0zLjZzOSwxLjYxLDksMy42IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjIzLjc5IC0yNTIuNzkpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0yMzYuNSwyNTUuNWE5LDksMCwxLDEtOSw5LDksOSwwLDAsMSw5LTltMC0yYTExLDExLDAsMSwwLDExLDExLDExLDExLDAsMCwwLTExLTExWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIyMy43OSAtMjUyLjc5KSIvPjxwYXRoIGNsYXNzPSJjIiBkPSJNMjMyLDI2My41Nmw0LjUsMi4yNSw0LjUtNS42MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIyMy43OSAtMjUyLjc5KSIvPjwvc3ZnPg==) 0 0 no-repeat;
+        }
+      }
+
+      &-title {
+        font-size: $fz_m;
+        color: $col-bg-dark_icon;
+
+        @media screen and (min-width: 980px) {
+          font-size: $fz_m + 2;
+        }
+      }
+
+      &-value {
+        font-size: $fz_m + 1;
+
+        @media screen and (min-width: 600px) {
+          font-size: $fz_m + 2;
+        }
+
+        @media screen and (min-width: 980px) {
+          font-size: fz_b;
+        }
+      }
+    }
+
+    &__attention {
+      font-size: $fz_m + 1;
+      margin: 30px 0 25px;
+      padding:  0 0 4px 23px;
+      border-left: 2px solid $col-brand-addnl;
+
+      @media screen and (min-width: 600px) {
+        font-size: $fz_m + 2;
+        margin: 40px 0 35px;
+      }
+
+      @media screen and (min-width: 980px) {
+        font-size: $fz_b;
+      }
+
+      span {
+        color: $col-brand-addnl;
+      }
+    }
+
+    &__question {
+      margin: 0 (-$ind_m);
+      padding: 40px $ind_m 60px;
+      background: $col-bg-light_main;
+
+      @media only screen and (min-width: 980px) {
+        margin: 0 (-$ind_b);
+        padding: 50px $ind_b 60px;
+      }
+
+      h3 {
+        color: $col-brand_main;
+      }
+    }
+
+    &__getting {
+      font-size: $fz_m;
+      margin-bottom: 20px;
+
+      @media only screen and (min-width: 980px) {
+        margin-bottom: 60px;
+      }
+
+      h3 {
+        color: $col-brand_addnl;
+        margin-top: 30px;
+        margin-bottom: 1em;
+
+        @media only screen and (min-width: 980px) {
+          margin-top: 50px;
+        }
+      }
+    }
+
+    &__history {
+      position: relative;  
+      text-align: center;
+      margin: 10px (-$ind_b) 30px ($ind_m / 1.5);
+
+      @media only screen and (min-width: 600px) {
+        margin: 0 (-$ind_b * 1.5) 60px 33.333%;
+        text-align: left;
+      }
+
+      @media only screen and (min-width: 980px) {
+        float: right;
+        width: 50%;
+        max-width: 400px;
+        margin: -20px ($ind_b * -2) 40px ($ind_b * 2);
+        text-align: center;
+      }
+
+      img {
+        margin-bottom: $ind_m + 10;
+        @include border-radius(5px);
+        @include rotate(-7);
+        @include box-shadow;
+
+        @media only screen and (min-width: 600px) {
+          margin-bottom: 0;
+        }
+
+        @media only screen and (min-width: 980px) {
+          margin-bottom: $ind_m;
+        }
+      }
+
+      span {
+        display: inline-block;
+        margin-left: -($ind_m / 1.5 + $ind_m);
+        margin-right: $ind_b / 2;
+        font-size: $fz_s - 1;
+        color: #b3b8b8;
+
+        @media only screen and (min-width: 600px) {
+          position: absolute;
+          bottom: 0;
+          left: -33.333vw;
+          width: 30vw; 
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: $ind_m;
+        }
+
+        @media only screen and (min-width: 980px) {
+          position: static;
+          width: auto;
+          padding: 0 $ind_b;
+        }
+      }
+    }
+  }
+
+  .header {
+
+    &__actions {
+      margin-left: -18px;
+
+      a {
+        color: $col-bg-dark_icon !important;
+        border-bottom: none !important;
+
+        &:hover {
+          color: $col-brand-addnl !important;
+        }
+      }
+
+      &-item {
+        float: left;
+        margin: 0 0 0 18px;
+      }
+    }
+
+    &__search {
+      height: 50px;
+
+      i {
+
+        &:before {
+          content: "\79";
+          font-size: 22px;
+        }
+      }
+    }
+
+    &__fav {
+      height: 50px;
+    }
+  }
+
+  .info {
+
+    &__social {
+      font-size: $fz_m;
+      line-height: 28px;
+      letter-spacing: -1em;
+
+      & > span {
+        display: inline-block;
+        margin-right: 16px;
+        letter-spacing: normal;
+        vertical-align: middle;
+
+        @media only screen and (max-width: 599px) {
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+
+      &-icon {
+        position: relative;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        margin-right: 8px;
+        border-bottom: none;
+        font-size: 16px;
+        vertical-align: middle;
+        color: $col-bg-dark_icon;
+        text-align: center;
+        z-index: 2;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          display: block;
+          @include border-radius(4px);
+          @include skewX(-12deg);
+          border: 1px solid $col-brand_main;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          line-height: 28px;
+          letter-spacing: normal;
+        }
+
+        &:hover {
+
+          &:before {
+            border: 1px solid $col-brand_addnl;
+          }
+        }
+      }
+    }
+  }
+
+  .office {
+    width: 100vw;
+    padding-top: 62.5%;
+    background-image: url(../img/office-mobile.jpg);
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media only screen and (min-width: 600px) {
+      background-image: url(../img/office-tablet.jpg);
+    }
+
+    @media only screen and (min-width: 980px) {
+      padding-top: 0;
+      height: 100vh;
+      background-image: url(../img/office-desktop.jpg);
+      background-attachment: fixed;
+    }
+  }
+}

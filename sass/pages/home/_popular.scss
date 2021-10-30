@@ -1,0 +1,111 @@
+.popular {
+  position: relative;
+  padding-top: 10px;
+  @include top-line;
+
+  @media only screen and (min-width: 1200px) {
+    left: 25%;
+    width: 75%;
+  }
+}
+
+.catalog {
+  padding: 10px ($ind_m / 2);
+
+  @media only screen and (min-width: 980px) {
+    padding: ($ind_b / 2 - 7);
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding: 0;
+  }
+
+  &__item {
+
+    @media only screen and (min-width: 980px) {
+      width: 50%;
+    }
+    
+    @media only screen and (min-width: 1200px) {
+      padding: 0;
+    }
+  }
+
+  &__desc {
+
+    @media only screen and (min-width: 1200px) {
+      right: 7%;
+      bottom: auto;
+      left: 7%;
+      top: 50%;
+      @include translate3d(0,-50%,0);
+    }
+  }
+
+  .fotorama {
+
+    &__stage {
+
+      @media only screen and (min-width: 1200px) {
+        @include border-radius(0);
+      }
+    }
+  }
+}
+
+.popular-btns {
+  padding: 10px $ind_m 25px;
+  text-align: center;
+  
+  @media only screen and (min-width: 980px) {
+    min-height: 42px + 50;
+    padding: 25px 0;
+  }
+
+  a {
+    margin: 0 0 18px;
+
+    @media only screen and (min-width: 600px) {
+      margin: 0 12px 18px;
+    }
+
+    @media only screen and (min-width: 980px) {
+      margin: 0 15px;
+    }
+  }
+
+  &__more,
+  &__map {
+    width: 100%;
+
+    @media only screen and (min-width: 600px) {
+      width: auto;
+    }
+  }
+
+  &__more {
+    margin-bottom: 18px;
+
+    @media only screen and (min-width: 980px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__map {
+
+    @media only screen and (min-width: 1200px) {
+      display: none !important;
+    }
+  }
+
+  &__catalog {
+    text-transform: uppercase;
+    font-size: $fz_s;
+    font-weight: 600;
+    @include black-link;
+
+    @media only screen and (min-width: 980px) {
+      line-height: 42px;
+    }
+  }
+}

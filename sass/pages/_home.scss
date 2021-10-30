@@ -1,0 +1,92 @@
+.page-home {
+
+  @import "home/slider";
+  @import "home/main";
+
+  .lpb-container {
+    position: relative;
+  }
+
+  @import "home/links";
+  @import "home/popular";
+  @import "home/info-blog";
+
+  .company {
+    position: relative;
+    min-height: 100vh;
+    font-size: $fz_m + 1;
+
+    &__content {
+      position: relative;
+      padding: $ind_b $ind_m;
+      overflow: hidden;
+
+      @media only screen and (min-width: 980px) {
+        width: 75%;
+        left: 25%;
+        padding: 70px $ind_b 50px;
+      }
+
+      &:before {
+
+        @media only screen and (min-width: 1200px) {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: $ind_b;
+          right: $ind_b;
+          height: 1px;
+          background-color: #d8d9e0;
+        }
+      }
+    }
+
+    &__fixed {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25%;
+      height: 100vh;
+      padding: 30px 25px;
+      background: $col-bg-dark_main url(../img/bg-home-company.jpg) no-repeat 70% 50%;
+      background-size: cover;
+      color: $col-wh;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+      }
+
+      &.fixed {
+        position: fixed;
+      }
+    }
+  }
+
+  @import "home/about";
+  @import "home/adv";
+  @import "home/reviews";
+
+  .company-fixed {
+
+    &__social-copyright {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      bottom: 40px;
+      font-size: $fz_m - 1;
+
+      .ya-share2__item {
+
+        a {
+          color: $col-wh;
+        }
+      }
+    }
+
+    &__social {
+      padding-bottom: 15px;
+    }
+
+  }
+}

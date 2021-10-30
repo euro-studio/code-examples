@@ -1,0 +1,178 @@
+.links {
+  position: relative;
+  background-color: $col-bg-light_main;
+
+  @media only screen and (min-width: 980px) {
+    left: 0;
+    width: 75%;
+    max-width: calc(100% - 340px);
+  }
+
+  @media only screen and (min-width: 1200px) {
+    left: 25%;
+    width: 50%;
+    max-width: none;
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 33.333%;
+    overflow: hidden;
+
+    @media only screen and (min-width: 600px) {
+      padding-top: 30%;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      background-image: url(../img/bg-home-passport.jpg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+
+      @media only screen and (min-width: 600px) {
+        width: 60%;
+        left: auto;
+      }
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+    z-index: 2;
+
+    @media only screen and (min-width: 600px) {
+      top: -2px;
+      bottom: -2px;
+      width: 50%;
+      background-color: transparent;
+    }
+
+    &:after {
+
+      @media only screen and (min-width: 600px) {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        display: block;
+        background-color: $col-bg-light_main;
+        @include skewX(-12deg);
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    left: 20px;
+    @include transition(transform .3s ease);
+    @include translate3d(0,-50%,0);
+
+    @media only screen and (min-width: 600px) {
+      right: 50px;
+      left: 40px;
+    }
+
+    a {
+      font-size: $fz_m + 1;
+      border-bottom: 1px solid rgba(56,169,224,.25);
+
+      @media only screen and (max-width: 599px) {
+        color: $col-wh !important;
+        border-bottom: 1px solid rgba(255,255,255,.25);
+        @include text-shadow(0px, 0px, 5px, rgba(0,0,0,.75));
+      }
+
+      @media only screen and (min-width: 600px) {
+        font-size: $fz_m + 2;
+      }
+
+      @media only screen and (min-width: 980px) {
+        font-size: $fz_b;
+      }
+
+      &:hover {
+        border-bottom: 1px solid rgba(56,169,224,0);
+      }
+    }
+  }
+
+  &__item {
+
+    &:nth-child(even) {
+
+      &:before {
+        left: 0;
+        right: 0;
+        background-image: url(../img/bg-home-steps.jpg);
+        background-repeat: no-repeat;
+        background-position: 0 40%;
+        background-size: cover;
+
+        @media only screen and (min-width: 600px) {
+          right: auto;
+        }
+
+        @media only screen and (min-width: 980px) {
+          background-position: 0 50%;
+        }
+      }
+
+      .links {
+
+        &__text {
+          left: auto;
+          right: 0;
+
+          &:after {
+            @include skewX(12deg);
+          }
+        }
+
+        &__link {
+          right: 20px;
+          left: 20px;
+
+          @media only screen and (min-width: 600px) {
+            right: 40px;
+            left: 50px;
+          }
+
+          a {
+
+            @media only screen and (min-width: 600px) {
+              color: $col-brand-addnl;
+              border-bottom: 1px solid rgba(102,191,117,.25);
+            }
+
+            &:hover {
+
+              @media only screen and (min-width: 600px) {
+                color: $col-brand-main !important;
+                border-bottom: 1px solid rgba(102,191,117,0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

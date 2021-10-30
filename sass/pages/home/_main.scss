@@ -1,0 +1,244 @@
+.main {
+  position: relative;
+  padding: ($ind_m + 15) $ind_m ($ind_m - 2);
+  z-index: 10;
+  @include flexbox;
+  @include flex-direction(column-reverse);
+  @include top-line;
+
+  @media only screen and (min-width: 980px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    min-width: 340px;
+    min-height: 100vh;
+    padding: 36px $ind_b 37px;
+    @include flex-direction(column);
+    @include justify-content(space-between);
+  }
+
+  .sitemap-nav {
+    top: 40px;
+    right: 40px;
+
+    &__toggler {
+      position: absolute;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media only screen and (min-width: 980px) {
+      display: block;
+      @include clearfix;
+    }
+  }
+
+  &__phone {
+    float: left;
+    font-size: $fz_b - 1;
+    font-weight: 600;
+
+    a {
+      @include bg-brand-30;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__greeting {
+    display: none;
+
+    @media only screen and (min-width: 980px) {
+      display: block;
+      font-size: $fz_m + 1;
+      text-align: center;
+      color: #afafaf;
+    }
+  }
+ 
+  &__welcome {
+    padding: 25px 0;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__emblem {
+    
+    img {
+      width: 172px;
+    }
+  }
+
+  &__menu {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid $col-bg-light_addnl;
+    text-align: center;
+   
+    @media only screen and (min-width: 980px) {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      display: inline-block;
+      font-size: $fz_s + 1;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0 10px;
+      line-height: 2.5;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+        padding: 10px 0;
+        font-size: $fz_b - 1;
+        font-weight: 500;
+        text-transform: none;
+        line-height: $lh_m;
+      }
+
+      @media only screen and (min-width: 980px) and (min-height: 750px) {
+        padding: 12px 0;
+      }
+
+      a {
+        @include black-link;
+      }
+    }
+
+    &-important {
+
+      @media only screen and (min-width: 980px) {
+        font-size: $fz_b + 1 !important;
+      }
+    }
+  }
+
+  &__property {
+    text-align: center;
+
+    @media only screen and (max-width: 599px) {
+      @include flexbox;
+      @include flex-direction(column-reverse);
+    }
+
+    span {
+
+      @media only screen and (min-width: 600px) {
+        display: inline-block;
+      }
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+      }
+    }
+  }
+
+  &__selection {
+
+    @media only screen and (max-width: 599px) {
+      display: block !important;
+      margin-top: 15px;
+    }
+
+    a {
+    border-bottom: none !important;
+    
+    @media only screen and (min-width: 600px) {
+      margin-right: $ind_b;
+    }
+
+    @media only screen and (min-width: 980px) {
+      width: calc(100% - 10px);
+      margin-right: 0;
+    }
+
+      &:hover {
+        border-bottom: none !important;
+      }
+    }
+  }
+
+  &__choice {
+    padding: 13px 0 6px;
+    font-size: $fz_s - 1;
+    color: #afafaf;
+
+    @media only screen and (max-width: 979px) {
+      display: none !important;
+    }
+  }
+
+  &__search {
+
+    @media only screen and (max-width: 599px) {
+      display: block !important;
+      @include btn;
+    }
+
+    a {
+      color: $col-bl;
+
+      @media only screen and (max-width: 599px) {
+        border-bottom: none !important;
+      }
+
+      @media only screen and (min-width: 600px) {
+        position: relative;
+        margin-left: 30px;
+        border-bottom-color: $col-brand_main;
+      }
+
+      @media only screen and (min-width: 980px) {
+        margin-left: 0;
+      }
+
+      &:before {
+
+        @media only screen and (min-width: 600px) {
+          position: absolute;
+          display: block;
+          left: -30px;
+          top: 50%;
+          margin-top: -9px;
+          color: $col-brand-main;
+          @include icons;
+          @include transition(transform .2s ease, color .2s ease);
+        }
+      }
+
+      &:hover {
+
+        &:before {
+          color: $col-brand-addnl;
+          @include scale(1.1);
+        }
+      }
+    }
+
+    .icon-search-main {
+
+      &:before {
+
+        @media only screen and (max-width: 599px) {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
+}

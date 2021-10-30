@@ -1,0 +1,203 @@
+.home-adv {
+  position: relative;
+  margin: 0 (-$ind_m);
+  height: 400px;
+
+  @media only screen and (min-width: 980px) {
+    margin: 0 (-$ind_b);
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+  }
+
+  @media only screen and (min-width: 1500px) {
+    height: 420px;
+  }
+
+  &:active {
+
+    @media only screen and (min-width: 980px) {
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
+      cursor: grabbing;
+      
+      
+    }
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    svg {
+      fill: $col-wh;
+    }
+  }
+
+  &__viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__items {
+    height: 100%;
+    @include clearfix;
+
+    &.active {
+      @include transition(transform 1s ease);
+    }
+  }
+
+  &__item {
+    float: left;
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    color: $col-wh;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-size: cover;
+
+    @media only screen and (min-width: 980px) {
+      width: 75vw;
+    }
+  }
+
+  &__digit {
+    display: none;
+
+    @media only screen and (min-width: 600px) {
+      display: block;
+      position: absolute;
+      left: -5%;
+      bottom: 0;
+      opacity: .3;
+      font-size: 250px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    @media only screen and (min-width: 980px) {
+      left: 2%;
+      font-size: 331px;
+    }
+
+    @media only screen and (min-width: 1500px) {
+      bottom: 20px;
+    }
+
+    @media only screen and (min-width: 1750px) {
+      left: 7%;
+      bottom: 10px;
+    }
+  }
+
+  &__desc {
+    position: absolute;
+    top: 50%;
+    left: $ind_m;
+    right: $ind_m;
+
+    @media only screen and (max-width: 979px) {
+      @include translate3d(0,-50%,0);
+    }
+    
+    @media only screen and (min-width: 600px) {
+      left: 33.333%;
+    }
+
+    @media only screen and (min-width: 980px) {
+      top: auto;
+      left: 50%;
+      right: $ind_b;
+      bottom: 40px;
+    }
+
+    @media only screen and (min-width: 1500px) {
+      right: $ind_b * 2;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__controls {
+    margin-bottom: 1.6em;
+    @include clearfix;
+
+    @media only screen and (min-width: 980px) {
+      margin-bottom: 3.2em;
+    }
+  }
+
+  &__control {
+    float: left;
+    margin-right: 25px;
+    opacity: .75;
+    cursor: pointer;
+    @include transition(all .15s ease);
+
+    &:hover {
+      opacity: 1;
+      color: $col-brand-addnl;
+      @include scale(1.15);
+    }
+  }
+
+  &__bullets {
+    float: left;
+    margin-right: 25px;
+    margin-top: 10px;
+    
+    span {
+      float: left;
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      background-color: $col-wh;
+      opacity: .5;
+      cursor: pointer;
+      @include border-radius(50%);
+      @include transition(all .15s ease);
+
+      &.active,
+      &:hover {
+        opacity: 1;
+      }
+
+      &:hover {
+        background-color: $col-brand-addnl;
+      }
+
+      &.active {
+        background-color: $col-wh !important;
+        cursor: default;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $fz_b;
+    font-weight: 600;
+    line-height: 1.45;
+
+    @media only screen and (min-width: 980px) {
+      font-size: $fz_b + 2;
+    }
+  }
+
+  &__text {
+    margin-top: 1.3em;
+
+    @media only screen and (min-width: 980px) {
+      font-size: $fz_m + 2;
+    }
+  }
+}

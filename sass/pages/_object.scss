@@ -1,0 +1,1266 @@
+.page-object {
+
+  .object {
+    position: relative;
+    min-height: 100vh;
+
+    &__gallery {
+      position: relative;
+
+      @media only screen and (min-width: 980px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      &.fixed {
+        position: fixed;
+      }
+
+      .fotorama {
+        position: relative;
+        z-index: 15;
+        overflow: visible;
+
+        &__nav {
+
+          @media only screen and (max-width: 979px) {
+            background: $col-bg-light_addnl;
+          }
+
+          @media only screen and (min-width: 980px) {
+            text-align: left;
+          }
+        }
+
+        &__nav-wrap {
+
+          @media only screen and (min-width: 980px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include translate3d(0,-50%,0);
+          }
+        }
+
+        &__nav__shaft {
+          padding-right: 2px;
+          background: $col-bg-light_addnl;
+
+          @media only screen and (min-width: 980px) {
+            background-color: $col-wh;
+          }
+        }
+
+        &__thumb-border {
+          border-color: $col-bg-light_addnl;
+          background: rgba(56,169,224,.5);
+          background: -moz-linear-gradient(-30deg, rgba(102,191,117,.5) 10%, rgba(56,169,224,.5) 85%);
+          background: -webkit-linear-gradient(-30deg, rgba(102,191,117,.5) 10%,rgba(56,169,224,.5) 85%);
+          background: linear-gradient(150deg, rgba(102,191,117,.5) 10%,rgba(56,169,224,.5) 85%);
+
+          @media only screen and (min-width: 980px) {
+            border-color: $col-wh;
+          }
+        }
+
+        &__fullscreen-icon {
+          top: 20px;
+          right: 20px;
+          width: auto;
+          height: auto;
+          font-size: 22px;
+          line-height: 22px !important;
+          opacity: .85;
+          @include icons;
+
+          &:before {
+            content: "\52";
+            color: $col-wh;
+          }
+        }
+
+        &__arr {
+          position: absolute;
+          top: 50%;
+          width: auto;
+          height: auto;
+          margin-top: -17px;
+          font-size: 35px;
+          line-height: 35px !important;
+          opacity: .85;
+          @include icons;
+
+          @media only screen and (min-width: 980px) {
+            margin-top: 9px;
+          }
+
+          &:before {
+            color: $col-wh;
+            @include transition(color .2s ease, transform .2s ease);
+          }
+
+          &--disabled {
+            opacity: .2 !important;
+          }
+
+          &:hover {
+
+            &:before {
+              display: inline-block;
+              color: $col-brand-addnl;
+              @include scale(1.2);
+            }
+          }
+
+          &--prev {
+            left: 20px;
+
+            &:before {
+              content: "\65";
+            }
+          }
+
+          &--next {
+            right: 20px;
+
+            &:before {
+              content: "\66";
+            }
+          }
+
+          &.delay {
+            @include transition-delay(.6s);
+          }
+        }
+      }
+    }
+
+    &__desc {
+      position: relative;
+      padding: 0 $ind_m;
+      @include top-line;
+
+      @media only screen and (min-width: 980px) {
+        left: 50%;
+        width: 50%;
+        padding: 0 $ind_b;
+      }
+    }
+
+    &__intro {
+      padding: ($ind_b - 5)  0;
+
+      @media only screen and (min-width: 600px) {
+        padding: $ind_b  0;
+      }
+
+      @media only screen and (min-width: 980px) {
+        padding: ($ind_b * 2) 0;
+      }
+      
+      @media only screen and (min-width: 1250px) {
+        padding: ($ind_b * 2) $ind_b;
+      }
+
+      .params {
+        margin-top: ($ind_b + 2);
+
+        @media only screen and (min-width: 600px) {
+          padding: 0 $ind_b;
+        }
+
+        @media only screen and (min-width: 980px) {
+          margin-top: ($ind_b * 2 + 2);
+          padding: 0;
+        }
+      }
+    }
+
+    &__content {
+      padding-bottom: 28px;
+
+      h2 {
+        margin-bottom: .75em;
+        font-size: ($fz-h_m - 3);
+        color: $col-brand-addnl;
+      }
+    }
+  }
+
+  .gallery {
+
+    &__header {
+    display: none;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 25px;
+        z-index: 10;
+        color: $col-wh;
+      }
+    }
+
+    &__logo {
+      float: left;
+      width: 160px;
+
+      a {
+        border-bottom: none !important;
+      }
+
+      img {
+        display: block;
+      }
+    }
+
+    &__feedback {
+      float: right;
+      text-align: right;
+      opacity: .95;
+
+      li {
+        padding-bottom: 5px;
+
+        a {
+          color: $col-wh;
+          border-bottom-color: $col-wh;
+        }
+
+        &.phone {
+          font-size: $fz_b - 1;
+          font-weight: 600;
+          line-height: 36px;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &__main-photo,
+    &__no-photo,
+    &__slider .fotorama__stage,
+    &__slider .fotorama__thumb {
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: auto;
+      }
+
+      &:before {
+        z-index: 4;
+        background-color: $col-bl;
+        opacity: .2;
+      }
+
+      &:after {
+        z-index: 5;
+        @include img-mask;
+        opacity: .05;
+      }
+    }
+
+    &__main-photo {
+      display: none;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        border-bottom: 1px solid $col-wh;        
+      }
+    }
+
+    &__slider {
+      position: relative;
+      width: 100%;
+
+      @media only screen and (min-width: 980px) {
+        height: 50%;
+        border-top: 1px solid $col-wh;
+      }
+    }
+
+    &__no-photo {
+      position: relative;
+      width: 100%;
+      height: 33.333vh;
+      background: url(../img/no-photo.jpg) no-repeat 80% 50%;
+      background-size: cover;
+
+      @media only screen and (min-width: 980px) {
+        height: 100%;
+      }
+    }
+  }
+  
+  .gallery__social {
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 100;
+    text-align: center;
+
+    @media only screen and (min-width: 600px) {
+      padding: 25px 0;
+    }
+
+    @media only screen and (min-width: 980px) {
+      right: 0;
+      width: 115px;
+      padding: 20px;
+      text-align: left;
+      @include translate3d(0,0,0);
+    }
+
+    a {
+      color: $col-wh !important;
+
+      &:hover {
+        color: $col-brand-addnl !important;
+      }
+    }
+
+    .ya-share2 {
+
+      @media only screen and (max-width: 979px) {
+        margin: 0 !important;
+        line-height: 36px;
+      }
+
+      &__item {
+
+        @media only screen and (min-width: 980px) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  
+  .gallery__no-photo {
+
+    & + .gallery__social {
+      bottom: 0;
+    }
+  }
+
+  .one-slide {
+
+    & + .gallery__social {
+
+      @media only screen and (max-width: 979px) {
+        bottom: 0;
+      }
+    }
+  }
+
+  .many-slides {
+
+    & + .gallery__social {
+
+      @media only screen and (max-width: 979px) {
+        bottom: 100px;
+      }
+
+      @media only screen and (max-width: 599px) {
+        bottom: 60px;
+      }
+    }
+  }
+
+  .object {
+    
+    &__header {
+      display: none;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+        margin: 0 (-$ind_b);
+        min-height: 60px;
+        line-height: 50px;
+        padding: 10px $ind_b 0;
+        border-bottom: 1px solid #e8e8e8;
+        @include clearfix;
+      }
+
+      i {
+        line-height: 50px !important;
+      }
+
+      .sitemap-nav {
+        top: 26px;
+        z-index: 10;
+        right: $ind_b;
+      }
+    }
+  }
+
+  .header {
+
+    &__crumbs {
+      float: left;
+      font-size: $fz_m - 1;
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      li {
+        float: left;
+        padding-right: 8px;
+
+        &:after {
+          content: "\6c";
+          padding-left: 8px;
+          font-size: 8px;
+          color: $col-brand-main;
+          @include icons;
+        }
+
+        &:last-child {
+          padding-right: 0;
+
+          &:after {
+            content: '';
+            padding: 0;
+          }
+        }
+      }
+
+      a {
+        color: #535e63;
+        border-bottom: 1px solid rgba(83,94,99,.25);
+
+        &:hover {
+          border-bottom: 1px solid rgba(102,191,117,.0);
+        }
+      }
+    }
+
+    &__actions {
+      display: none;
+
+      @media only screen and (min-width: 1200px) {
+        display: block;
+        float: right;
+        padding-right: 49px + 22;
+      }
+
+      a {
+        color: $col-bg-dark_icon !important;
+        border-bottom: none !important;
+
+        &:hover {
+          color: $col-brand-addnl !important;
+        }
+      }
+
+      &-item {
+        float: left;
+        margin: 0 0 0 18px;
+      }
+    }
+
+    &__search {
+      height: 50px;
+
+      i {
+
+        &:before {
+          content: "\79";
+          font-size: 22px;
+        }
+      }
+    }
+
+    &__fav {
+      height: 50px;
+    }
+  }
+
+  .intro {
+    
+    &__actions {
+      padding-bottom: 18px;
+      line-height: 24px;
+      @include clearfix;
+
+      @media only screen and (min-width: 600px) {
+        padding-bottom: 24px;
+        line-height: 31px;
+      }
+    }
+
+    &__fav-id {
+      float: left;
+
+      & > div {
+        float: left;
+      }
+    } 
+
+    &__fav {
+
+      .msfavorites {
+        display: block;
+        border-bottom: none !important;  
+        cursor: pointer;
+        color: $col-brand_main__light;
+
+        .icon-fav-object {
+
+          &:before {
+
+            @media only screen and (max-width: 599px) {
+              font-size: 24px;
+            }
+          }
+        }
+
+        &.voted {
+          -webkit-animation: votedAnim 1s;
+          animation: votedAnim 1s;
+
+          .icon-fav-object {
+
+            &:before {
+              content: "\77";
+              color: $col-red;
+              @include transition(color .2s ease);
+            }
+          }
+
+          &:hover {
+
+            .icon-fav-object {
+
+              &:before {
+                color: $col-brand-addnl;
+              }
+            }
+          }  
+        }
+
+        @-webkit-keyframes votedAnim {
+          30% {@include scale(1.3)}
+        }
+
+        @keyframes votedAnim {
+          30% {@include scale(1.3)}
+        }
+      }
+    }
+
+    &__id {
+      padding-left: 15px;
+      font-size: $fz_m + 2;
+      color: $col-bg-dark_icon;
+
+      @media only screen and (max-width: 599px) {
+        padding-left: 10px;
+      }
+    }
+
+    &__pdf-print {
+      float: right;
+      font-size: $fz_s + 1;
+
+      & > div {
+        float: left;
+        padding-left: 20px;
+      }
+
+      a,
+      span {
+        color: $col-bg-dark_icon;
+        border-bottom: 1px dotted rgba(71,82,88,.35);
+        cursor: pointer;
+        @include transition(color .2s ease);
+
+        &:hover {
+          color: $col-brand-addnl;
+          border-bottom: 1px dotted rgba(102,191,117,.0);
+        }
+      }
+    }
+
+    &__print {
+
+      @media only screen and (max-width: 979px) {
+        display: none;
+      }
+    }
+
+    &__title {
+
+      h1 {
+        font-size: $fz_b;
+        line-height: $lh_m;
+        margin-bottom: 0;
+
+        @media only screen and (min-width: 600px) {
+          font-size: ($fz-h_m - 3);
+          line-height: $lh_s + .1;
+        }
+      }
+    }
+
+    &__price {
+      margin: 24px 0 19px;
+      line-height: 1;
+
+      @media only screen and (min-width: 600px) {
+        margin: 30px 0;
+      }
+      
+      span {
+        font-size: $fz_b;
+        color: $col-brand_addnl;
+
+        @media only screen and (min-width: 600px) {
+          font-size: $fz-h_s;
+        }
+
+        &.request {
+          color: $col-link_addnl;
+          @include bg-brand-30;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &.sold {
+          color: $col-red;
+        }
+
+        span {
+          font-size: $fz-h_m;
+          color: $col-link_addnl;
+          @include bg-brand-30;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          @media only screen and (min-width: 600px) {
+            font-size: $fz-h_b;
+          }
+        }
+      }
+    }
+
+    &__location {
+      margin-bottom: 15px;
+      font-size: $fz_m;
+      @include clearfix;
+
+      @media only screen and (min-width: 600px) {
+        margin-bottom: 45px;
+        font-size: $fz_m + 2;
+      }
+
+      div {
+        float: left;
+        margin-right: 30px;
+
+        @media only screen and (max-width: 599px) {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+
+        &:first-child {
+
+          &:after {
+
+            @media only screen and (max-width: 599px) {
+              content: ',';
+              padding-right: 7px;
+            }
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @media only screen and (max-width: 599px) {
+          margin-right: 0;
+        }
+
+        span {
+
+          @media only screen and (max-width: 599px) {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        color: $col-bg-dark_icon;
+        border-bottom-color: rgba(71,82,88,.25);
+
+        &:hover {
+          border-bottom-color: rgba(71,82,88,.0);
+        }
+      }
+    }
+
+    &__area {
+
+      @media only screen and (max-width: 599px) {
+        padding-right: 20px;
+      }
+    }
+
+    &__map {
+
+      a {
+
+        &:before {
+          float: left;
+          content: "\53";
+          padding-right: 10px;
+          font-size: 25px;
+          color: $col-brand-main;
+          @include icons;
+          @include transition(color .2s ease);
+        }
+
+        &:after {
+          float: right;
+          display: inline-block;
+          content: "\4d";
+          padding-left: 7px;
+          font-size: 13px;
+          line-height: 25px !important;
+          color: #727b7f;
+          @include icons;
+          @include transition(color .2s ease, transform .2s ease);
+        }
+
+        &:hover {
+
+          &:before {
+            color: $col-brand-addnl;
+          }
+          
+          &:after {
+            color: $col-brand-addnl;
+
+            @media only screen and (min-width: 980px) {
+              @include translate3d(0, 10% ,0);
+            }
+          }
+        }
+      }
+    }
+
+    &__btns {
+
+      a {
+        margin-top: 15px;
+        margin-right: 15px;
+
+        @media only screen and (min-width: 600px) {
+          margin-top: 0;
+        }
+      }
+
+      .btns__question {
+
+        &:before {
+          background: #bfc3c5 !important;
+        }
+
+        &:after {
+          border: 2px solid #bfc3c5 !important;
+        }
+      }
+
+      .btn {
+        border-bottom: none !important;
+      }
+    }
+  }
+
+  .params {
+    padding: 0 $ind_m;
+    font-size: $fz_m;
+
+    @media only screen and (min-width: 600px) {
+      padding: 0;
+      font-size: $fz_m + 1;
+    }
+
+    &__section {
+      margin-bottom: 18px;
+      @include flexbox;
+
+      .abbr {
+
+        @media only screen and (min-width: 600px) {
+          display: none;
+        }
+      }
+
+      .full {
+        display: none;
+
+        @media only screen and (min-width: 600px) {
+          display: inline;
+        }
+      }
+    }
+
+    &__column {
+
+      & + .params__column {
+
+        .params__section {
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &__dotted {
+      @include flex(1);
+
+      &-line {
+        height: 17px;
+        margin: 0 7px;
+        border-bottom: 1px dotted #bfc3c5;
+      }
+    }
+
+    &__value {
+      width: 115px;
+
+      @media only screen and (min-width: 600px) {
+        width: 150px;
+      }
+    }
+  }
+
+  .introtext {
+    margin-bottom: $ind_b;
+    padding:  0 0 4px 23px;
+    border-left: 2px solid $col-brand-main;
+    font-size: ($fz_m + 1);
+    color: #487d94;
+
+    @media only screen and (min-width: 600px) {
+      margin-bottom: ($ind_b + 5);
+      font-size: ($fz_b - 1);
+    }
+  }
+
+  .features {
+    
+    ul {
+      margin-top: -10px;
+      @include clearfix;
+    }
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      margin-top: 10px;
+      color: $col-bg-dark_icon;
+
+      @media only screen and (min-width: 600px) {
+        float: left;
+        width: 50%;
+        padding-right: 25px;
+      }
+
+      @media only screen and (min-width: 1350px) {
+        width: 33.333%;
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '\50';
+        line-height: $lh_m !important;
+        color: $col-brand_main__light;
+        @include icons;
+      }
+    }
+  }
+
+  .distances {
+    padding: ($ind_b - 5) $ind_m;
+    margin: $ind_b (-$ind_m) ($ind_b - 5);
+    background-color: $col-bg-light_main;
+    @include clearfix;
+
+    @media only screen and (min-width: 600px) {
+      padding: ($ind_b * 1.5 - 14) $ind_m;
+      margin: ($ind_b + 10) (-$ind_m) ($ind_b + 5);
+    }
+
+    @media only screen and (min-width: 980px) {
+      padding: ($ind_b * 1.5 - 14) $ind_b;
+      margin: ($ind_b + 10) (-$ind_b) ($ind_b + 5);
+    }
+
+    &__item {
+      position: relative;
+      float: left;
+      width: 50%;
+      min-height: 75px;
+      margin: 14px 0;
+      padding-top: 75px;
+      line-height: 1;
+      text-align: center;
+
+      @media only screen and (min-width: 600px) {
+        width: 33.333%;
+      }
+
+      @media only screen and (min-width: 1250px) {
+        padding-top: 0;
+        padding-left: 75px + 17;
+        text-align: left;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        width: 75px;
+        height: 75px;
+        background-image: url(../img/icons-distances.png);
+        background-repeat: no-repeat;
+        background-size: 225px 150px;
+        @include border-radius(50%);
+        @include translate3d(-50%,0,0);
+
+        @media only screen and (min-width: 1250px) {
+          left: 0;
+          @include translate3d(0,0,0);
+        }
+      }
+
+      &_sea {
+
+        &:before {
+          background-position: 0 0;
+        }
+      }
+
+      &_centre {
+
+        &:before {
+          background-position: 50% 0;
+        }
+      }
+
+      &_marina {
+
+        &:before {
+          background-position: 100% 0;
+        }
+      }
+
+      &_golf {
+
+        &:before {
+          background-position: 0 100%;
+        }
+      }
+
+      &_eng-school {
+
+        &:before {
+          background-position: 50% 100%;
+        }
+      }
+
+      &_airport {
+
+        &:before {
+          background-position: 100% 100%;
+        }
+      }
+    }
+
+    &__value {
+      font-size: $fz-h_s;
+      margin-top: 10px;
+      padding-bottom: 5px;
+
+      @media only screen and (min-width: 600px) {
+        margin-top: 16px;
+      }
+    }
+
+    &__note {
+      color: #8fa8b3;
+    }
+  }
+
+  .map-container {
+    position: relative;
+    height: 450px;
+    margin: 0 (-$ind_m);
+
+    @media only screen and (min-width: 980px) {
+      margin: 0 (-$ind_b);
+    }
+
+    .map-toggler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 5;
+      padding: 15px $ind_m 12px;
+      background-color: rgba(255,255,255,.65);
+      @include clearfix;
+
+      &__item {
+        float: left;
+        margin-left: $ind_m;
+        border-top: 2px solid rgba(0,0,0,.25);
+        color: $col-bg-dark_icon;
+        cursor: pointer;
+        @include transition(all .2s ease);
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:hover {
+          border-top: 2px solid rgba(102,191,117,1);
+          color: $col-brand_addnl;
+        }
+
+        &.active {
+          border-top: 2px solid rgba(0,0,0,1);
+          font-weight: 600;
+          color: $col-bl;
+          cursor: default;
+        }
+      }
+    }
+
+    .map {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  .new-search {
+    position: relative;
+    padding: (22px + 10) $ind_m 22px;
+    background: $col-bg-light_main;
+    @include top-line;
+
+    @media only screen and (min-width: 980px) {
+      padding: (22px + 10) $ind_b 22px;
+    }
+
+    .btn {
+      width: 100%;
+      border: none !important;
+
+      @media only screen and (min-width: 980px) {
+        display: none;
+      }
+    }
+
+    .properties-filter {
+      display: none;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+        padding: 0;
+        font-size: 13px;
+        @include clearfix;
+      }
+
+      .fields {
+        float: left;
+        width: calc(100% - 145px);
+        height: 46px;
+        padding: 0 2px;
+        @include flexbox;
+        @include flex-direction(row);
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          background: rgb(255,255,255);
+          border: 1px solid rgba(71,82,88,.25);
+          @include border-radius(5px);
+          @include skewX(-12deg);
+        }
+
+        .field {
+          border-left: 1px solid rgba(71,82,88, .25);
+          @include flex-grow(1);
+
+          &:first-child {
+            border-left: none;
+          }
+
+          &:before {
+            content: none;
+          }
+        }
+      }
+
+      .submit {
+        float: right;
+        width: 135px !important;
+        font-size: $fz_s !important;
+
+        button {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .similar-objects {
+
+    h3 {
+      margin-bottom: 0;
+
+      @media only screen and (max-width: 979px) {
+        font-size: $fz_b + 3;
+      }
+
+      @media only screen and (max-width: 599px) {
+        font-size: $fz_b;
+      }
+    }
+
+    &__header {
+      padding: 30px $ind_m 0;
+
+      @media only screen and (min-width: 600px) {
+        line-height: 27.3px !important;
+        @include clearfix;
+      }
+
+      @media only screen and (min-width: 980px) {
+        padding: 45px $ind_b 0;
+        line-height: 31.2px !important;
+      }
+
+      a {
+        color: $col-bg-dark_icon;
+        border-bottom-color: rgba(71,82,88,.25);
+
+        &:hover {
+          border-bottom-color: rgba(71,82,88,.0);
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 10px;
+
+      @media only screen and (min-width: 600px) {
+        float: left;
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+
+      @media only screen and (min-width: 600px) {
+        float: right;
+      }
+    }
+  }
+
+  .catalog {
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    @media only screen and (min-width: 600px) {
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+
+    @media only screen and (min-width: 980px) {
+      padding-top: 40px;
+      padding-bottom: 45px;
+    }
+
+    &__item {
+
+      @media only screen and (min-width: 600px) {
+        width: 50%;
+      }
+
+      @media only screen and (min-width: 1250px) {
+        width: 25%;
+      }
+    }
+
+    &__thumb {
+
+      &-title {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        margin-right: 15px;
+        z-index: 11;
+        font-size: $fz_s;
+
+        @media only screen and (min-width: 980px) {
+          top: 20px;
+          left: 20px;
+          margin-right: 20px;
+          font-size: $fz_m;
+        }
+       
+        a {
+          @include transition-delay(0s);
+        }
+      }
+    }
+  }
+}

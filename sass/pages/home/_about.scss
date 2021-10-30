@@ -1,0 +1,88 @@
+.about {
+
+  &__cat {
+    width: 280px;
+    margin-left: -$ind_m;
+    margin-bottom: 20px;
+    @include translate3d(-15.425%,0,0);
+
+    @media only screen and (min-width: 600px) {
+      float: right;
+      margin-left: 0;
+      margin-right: -$ind_m;
+      margin-bottom: 10px;
+      @include translate3d(15.425%,0,0);
+    }
+
+    @media only screen and (min-width: 980px) {
+      width: 376px;
+      margin-right: -$ind_b;
+    }
+  }
+
+  &__intro {
+    font-size: $fz_b;
+    color: $col-brand-addnl;
+
+    @media only screen and (min-width: 600px) {
+      font-size: $fz_b + 3;
+    }
+
+    @media only screen and (min-width: 980px) {
+      font-size: $fz-h_s + 2;
+    }
+  }
+
+  &__advantage {
+    margin-top: 2.4em;
+    padding-left: 23px;
+    border-left: 2px solid $col-brand-main;
+    font-size: $fz_b;
+
+    @media only screen and (min-width: 980px) {
+      font-size: $fz-h_s;
+      padding-left: 33px;
+      margin-left: calc(25% - 33px);
+    }
+
+    span {
+      color: $col-brand-main;
+    }
+  }
+
+  &__narrow {
+    margin: 0 auto 1.6em;
+
+    @media only screen and (min-width: 980px) {
+      width: 75%;
+    }
+  }
+
+  &__slogan {
+    margin: 1.6em 0px;
+    font-size: $fz_b + 3;
+
+    @media only screen and (min-width: 600px) {
+      font-size: $fz-h_s;
+      text-align: center;
+    }
+
+    @media only screen and (min-width: 980px) {
+      font-size: $fz-h_m;
+    }
+
+    span {
+      @include bg-brand-30;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__signature {
+    color: #a1aaaf;
+
+    @media only screen and (min-width: 980px) {
+      padding-left: 20px;
+    }
+  }
+}
