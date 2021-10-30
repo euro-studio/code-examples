@@ -1,0 +1,493 @@
+.icon-fav {
+  position: relative;
+
+  span {
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    margin-left: 3px;
+    font-size: $fz_s - 3;
+    line-height: 1 !important;
+    color: $col-brand-main;
+    @include transition(color .2s ease);
+  }
+
+  i {
+    @include transition(opacity .2s ease);
+    
+    &:before {
+      content: "\73";
+      font-size: 22px;
+    }
+  }
+
+  span[data-value='0'] {
+    display: none;
+
+    & + i {
+      opacity: .35;
+      
+      &:before {
+        content: "\71";
+      }
+    }
+  }
+
+  &:hover {
+
+    i {
+      opacity: 1 !important;
+    }
+
+    span {
+      color: $col-brand-addnl;
+    }
+  }
+}
+
+.ya-share2[data-bare] {
+  font-size: $fz_b - 1 !important;
+  margin: 0 -6px;
+  @include icons;
+  @include clearfix;
+  
+  .ya-share2 {
+
+      &__list {
+      margin: 0;
+    }
+
+    &__item {
+      display: inline-block;
+      margin: 0 6px;
+
+      @media only screen and (min-width: 980px) {
+        display: list-item;
+        float: left;
+      }
+
+      a {
+        border-bottom: none;
+        color: $col-bg-dark_main;
+      }
+
+      &_service {
+
+        &_facebook {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\430';
+            }
+          }
+        }
+
+        &_vkontakte {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\431';
+            }
+          }
+        }
+
+        &_twitter {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\432';
+            }
+          }
+        }
+
+        &_odnoklassniki {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\433';
+            }
+          }
+        }
+
+        &_gplus {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\434';
+            }
+          }
+        }
+
+        &_telegram {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\437';
+            }
+          }
+        }
+
+        &_viber {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\43a';
+            }
+          }
+        }
+
+        &_whatsapp {
+
+          .ya-share2__icon {
+
+            &:before {
+              content: '\439';
+            }
+          }
+        }
+      }
+    }
+
+    &__title {
+      display: none;
+    }
+  }
+}
+
+.map-info-window {
+  padding: 10px 0;
+  font-family: $ff_main;
+  font-size: $fz_m;
+
+  &__img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    @include border-radius(3px);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: auto;
+    }
+
+    &:before {
+      z-index: 9;
+      background-color: $col-bl;
+      opacity: .15;
+      @include transition(opacity .2s ease);
+    }
+
+    &:after {
+      z-index: 10;
+      @include img-mask;
+      opacity: .05;
+      @include transition(opacity .2s ease);
+    }
+    
+    img {
+      display: block;
+      max-width: 100% !important;
+      max-height: 120px;
+    }
+
+    i {
+
+      &:before {
+        font-size: 28px !important;
+      }
+    }
+
+    .msfavorites {
+      display: block;
+      border-bottom: none !important;  
+      cursor: pointer;
+
+      &.voted {
+        -webkit-animation: votedAnim 1s;
+        animation: votedAnim 1s;
+
+        .icon-fav-catalog {
+
+          &:before {
+            content: "\75";
+            color: $col-wh;
+          }
+        }
+
+        &:hover {
+
+          .icon-fav-catalog {
+
+            &:before {
+              color: $col-brand-addnl;
+            }
+          }
+        }  
+      }
+
+      @-webkit-keyframes votedAnim {
+        30% {@include scale(1.3)}
+      }
+
+      @keyframes votedAnim {
+        30% {@include scale(1.3)}
+      }
+    }
+  }
+
+  &__title {
+    margin: 10px 0 12px;
+
+    a {
+      @include black-link;
+    }
+  }
+
+  &__price {
+    font-size: $fz_b;
+
+    span {
+      @include bg-brand-30;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.fotorama--fullscreen {
+
+  .fotorama {
+
+    &__nav {
+      background: rgba(0,0,0,.3);
+      @include box-shadow(0,0,20px,10px,rgba(0,0,0,.3));
+    }
+
+    &__nav-wrap {
+      position: absolute;
+      bottom: $ind_m;
+      left: 50%;
+      @include translate3d(-50%,0,0);
+      
+      &:hover {
+
+        .fotorama__nav__frame {
+          opacity: 1 !important;
+        }
+      }
+    }
+
+    &__nav__frame {
+      opacity: .7;
+      @include transition(opacity .2s ease);
+
+      &.fotorama__active {
+        opacity: 1;
+      }
+    }
+
+    &__thumb-border {
+      border-color: $col-wh;
+      background: rgba(56,169,224,.5);
+      background: -moz-linear-gradient(-30deg, rgba(102,191,117,.5) 10%, rgba(56,169,224,.5) 85%);
+      background: -webkit-linear-gradient(-30deg, rgba(102,191,117,.5) 10%,rgba(56,169,224,.5) 85%);
+      background: linear-gradient(150deg, rgba(102,191,117,.5) 10%,rgba(56,169,224,.5) 85%);
+    }
+
+    &__fullscreen-icon {
+      top: 20px !important;
+      right: 20px;
+      width: auto;
+      height: auto;
+      font-size: 22px;
+      line-height: 22px !important;
+      opacity: .85;
+      @include icons;
+      @include text-shadow(0,0,7px,rgba(0,0,0,.35));
+
+      &:before {
+        content: "\52";
+        color: $col-wh;
+      }
+    }
+
+    &__arr {
+      position: absolute;
+      top: 50%;
+      width: auto;
+      height: auto;
+      margin-top: -17px;
+      font-size: 35px;
+      line-height: 35px !important;
+      opacity: .85;
+      @include icons;
+      @include text-shadow(0,0,7px,rgba(0,0,0,.35));
+
+      @media only screen and (min-width: 980px) {
+        margin-top: 9px;
+      }
+
+      &:before {
+        color: $col-wh;
+        @include transition(color .2s ease, transform .2s ease);
+      }
+
+      &--disabled {
+        opacity: .2 !important;
+      }
+
+      &:hover {
+
+        &:before {
+          display: inline-block;
+          color: $col-brand-addnl;
+          @include scale(1.2);
+        }
+      }
+
+      &--prev {
+        left: 20px;
+
+        &:before {
+          content: "\65";
+        }
+      }
+
+      &--next {
+        right: 20px;
+
+        &:before {
+          content: "\66";
+        }
+      }
+
+      &.delay {
+        @include transition-delay(.6s);
+      }
+    }
+
+    &__stage,
+    &__thumb {
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: auto;
+      }
+
+      &:before {
+        z-index: 4;
+        background-color: $col-bl;
+        opacity: .2;
+      }
+
+      &:after {
+        z-index: 5;
+        @include img-mask;
+        opacity: .05;
+      }
+    }
+  }
+}
+
+.cat-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  svg {
+    display: block;
+    overflow: visible;
+    @include translate3d(0, 50%, 0);
+  }
+
+  .cat-opacity,
+  .cat-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .cat-opacity {
+    z-index: 1;
+    margin-top: -25px;
+    opacity: .2;
+    fill: rgba(255,255,255,.5);
+    stroke: $col-wh;
+    stroke-width: 6px;
+
+    @media only screen and (min-width: 600px) {
+      margin-top: -35px;
+      stroke-width: 4px;
+    }
+
+    @media only screen and (min-width: 980px) {
+      margin-top: -55px;
+      stroke-width: 2px;
+    }
+  }
+
+  .cat-gradient {
+    z-index: 2;
+    margin-top: -10px;
+    fill: url(#cat-gradient);
+  }
+
+  .cat-white {
+    position: relative;
+    z-index: 3;
+    fill: $col-wh;
+  }
+}
+
+.no-results {
+  display: block;
+  letter-spacing: normal !important;
+}
+
+.catalog {
+
+  .no-results {
+    margin: 0 7px;
+  }
+}
+
+.btn-default {
+
+  &.click {
+    color: $col-bg-light_addnl !important;
+
+    &:before {
+      background: $col-bg-light_main !important;
+      opacity: 1 !important;
+    }
+
+    &:after {
+      border-color: $col-bg-light_main !important;
+    }
+  }
+}

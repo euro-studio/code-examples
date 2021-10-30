@@ -1,0 +1,221 @@
+.sitemap-nav {
+  position: absolute;
+  top: 16px;
+  right: $ind_m;
+  z-index: 999999;
+  line-height: $lh_m !important;
+
+  @media only screen and (min-width: 980px) {
+    right: 25px;
+  }
+
+  &__langs {
+    position: relative;
+    top: -3px;
+    margin-right: 33px;
+    font-size: $fz_s - 1;
+    font-weight: 600;
+    line-height: 2.473 !important;
+
+    a {
+      color: $col-bl;
+      border-bottom: none;
+    }
+  }
+
+  &__toggler {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 23px;
+    height: 18px;
+    overflow: hidden;
+
+    &-opener,
+    &-closer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    &-opener {
+      opacity: 1;
+      @include transition(opacity .2s ease .2s);
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: $col-brand-main;
+        right: 3px;
+        left: 0;
+        height: 2px;
+        @include transition(left .2s ease .2s, right .2s ease, background-color .2s ease);
+      }
+
+      &:before {
+        top: 0
+      }
+
+      &:after {
+        bottom: 0
+      }
+
+      span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        right: 0;
+        margin-top: -1px;
+        height: 2px;
+        background-color: $col-brand-main;
+        @include transition(right .2s ease .2s, background-color .2s ease);
+      }
+    }
+
+    &-closer {
+      opacity: 0;
+      @include transition(opacity .2s ease .2s);
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: $col-brand-main;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        @include transition(left .2s ease 0s,top .2s ease 0s, background-color .2s ease 0s);
+      }
+
+      &:before {
+        left: -22px;
+        @include rotate(45);
+        @include transform-origin(bottom right);
+      }
+
+      &:after {
+        left: 22px;
+        @include rotate(-45);
+        @include transform-origin(bottom left);
+      }
+    }
+
+    &:hover & {
+
+      &-opener,
+      &-closer {
+
+        &:before,
+        &:after {
+          background-color: $col-brand-addnl;
+        }
+      }
+
+      &-opener {
+
+        &:before,
+        &:after {
+          right: 0;
+        }
+
+        span {
+          background-color: $col-brand-addnl;
+        }
+      }
+    }
+  }
+
+  &.white {
+
+    .sitemap-nav {
+
+      &__langs {
+
+        a {
+          color: $col-wh;
+        }
+      }
+
+      &__toggler {
+
+        &-opener {
+
+          &:before,
+          &:after {
+            background-color: $col-wh;
+          }
+
+          span {
+            background-color: $col-wh;
+          }
+        }
+
+        &-closer {
+
+          &:before,
+          &:after {
+            background-color: $col-wh;
+          }
+        }
+      }
+    }
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.active {
+
+    .sitemap-nav {
+
+      &__toggler {
+
+        &-opener {
+          opacity: 0;
+
+          &:before,
+          &:after {
+            left: 100%;
+            @include transition-delay(0s);
+          }
+
+          span {
+            right: 100%;
+            @include transition-delay(0s);
+          }
+        }
+
+        &-closer {
+          opacity: 1;
+
+          &:before,
+          &:after {
+            top: 16px;
+            @include transition(left .2s ease .2s,top .2s ease .2s, background-color .2s ease);
+          }
+
+          &:before {
+            left: -4px;
+            @include rotate(45);
+            @include transform-origin(bottom right);
+          }
+
+          &:after {
+            left: 4px;
+            @include rotate(-45);
+            @include transform-origin(bottom left);
+          }
+        }
+      }
+    }
+  }
+}

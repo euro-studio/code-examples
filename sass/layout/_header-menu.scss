@@ -1,0 +1,414 @@
+.header-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  padding: $ind_m;
+  line-height: 29px;
+  @include clearfix;
+
+  @media only screen and (min-width: 980px) {
+    padding: 30px $ind_b;
+    line-height: 36px;
+  }
+
+  a {
+    color: $col-wh !important;
+    border-bottom-color: rgba(255,255,255,.25) !important;
+
+    &:hover {
+      color: $col-brand-addnl !important;
+      border-bottom-color: rgba(255,255,255,0) !important;
+    }
+  }
+
+  i {
+    line-height: 29px !important;
+
+    @media only screen and (min-width: 980px) {
+      line-height: 36px !important;
+    }
+  }
+
+  &__logo {
+    float: left;
+    width: 120px;
+    margin-top: 2px;
+    margin-left: 45px;
+    line-height: 0;
+
+    @media only screen and (min-width: 980px) {
+      width: 160px;
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    a {
+      border-bottom: none;
+    }
+
+    &-color {
+      display: none;
+    }
+  }
+
+  &__nav {
+    float: right;
+
+    & > div {
+      float: left;
+      padding-right: 20px;
+      height: 29px;
+
+      @media only screen and (min-width: 980px) {
+        margin-right: 23px;
+        padding: 0 20px;
+        height: 36px;
+      }
+    }
+  }
+
+  &__actions {
+
+    @media only screen and (max-width: 979px) {
+      padding-right: 0 !important;
+    }
+
+    a {
+      border-bottom: none !important;
+    }
+  }
+
+  &__links {
+    display: none;
+    @include clearfix;
+
+    @media only screen and (min-width: 600px) {
+      display: block;
+    }
+
+    a {
+      border-bottom-color: $col-wh;
+    }
+
+    &-item {
+      display: none;
+      float: left;
+      margin: 0 0 0 26px;
+
+      @media only screen and (min-width: 980px) {
+        display: block;
+      }
+    }
+  }
+
+  &__selection {
+
+    @media only screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+
+  &__question {
+
+    @media only screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+
+  &__catalog {
+    display: none;
+  }
+
+  &__blog-search {
+    position: relative;
+    display: none;
+
+    &:before {
+      content: '\79';
+      position: absolute;
+      top: 50%;
+      left: -35px;
+      padding-right: 0;
+      font-size: 21px;
+      color: $col-wh;
+      @include translate3d(0, -37.5% ,0);
+      @include icons;
+      @include transition(color .2s ease);
+    }
+
+    &:hover {
+
+      &:before {
+        color: $col-brand_addnl;
+      }
+    }
+  }
+
+  &__articles {
+    display: none;
+  }
+
+  &__phone {
+    font-size: $fz_b;
+    color: $col-wh;
+
+    &-icon {
+      display: inline;
+
+      @media only screen and (min-width: 980px) {
+        display: none;
+      }
+
+      i {
+
+        &:before {
+          font-size: $fz_b + 2;
+        }
+      }
+    }
+
+    &-title {
+      display: none;
+
+      @media only screen and (min-width: 980px) {
+        display: inline;
+        color: $col-wh;
+      }
+    }
+  }
+
+  &__fav {
+
+    a {
+      position: relative;
+
+      span {
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        margin-left: 3px;
+        font-size: $fz_s - 3;
+        line-height: 1 !important;
+        color: $col-wh;
+      }
+
+      &:hover {
+
+        span {
+          color: $col-brand-addnl;
+        }
+      }
+    }
+
+    i {
+      
+      &:before {
+        content: "\73";
+        font-size: 22px;
+      }
+    }
+
+    a[data-value='0'] {
+
+      i {
+        opacity: .75;
+        @include transition(opacity .1s ease);
+        
+        &:before {
+          content: "\71";
+        }
+      }
+
+      span {
+        display: none;
+      }
+
+      &:hover {
+
+        i {
+          opacity: 1;
+          @include transition(opacity .2s ease);
+        }
+      }
+    }
+  }
+
+  .sitemap-nav {
+    top: 50%;
+    left: $ind_m;
+    right: auto;
+    @include translate3d(0,-50%,0);
+
+    @media only screen and (min-width: 980px) {
+      left: auto;
+      right: $ind_b; 
+    }
+
+    &__toggler {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    &__toggler-opener,
+    &__toggler-closer {
+
+      span {
+        background-color: #fff;
+      }
+
+      &:before,
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &_page-home,
+  &_page-object,
+  &_page-map,
+  &_page-contacts {
+
+    @media only screen and (min-width: 980px) {
+      display: none;
+    }
+  }
+
+  &_page-map,
+  &_page-contacts {
+    background-color: $col-bg-light_main;
+    @include top-line;
+
+    &:before {
+      top: 100%;
+    }
+
+    a {
+      color: $col-bg-dark_icon !important;
+
+      &:hover {
+        color: $col-brand-addnl !important;
+      }
+    }
+
+    .sitemap-nav {
+
+      &__langs {
+
+        a {
+          color: $col-bg-dark_icon;
+        }
+      }
+
+      &__toggler-opener,
+      &__toggler-closer {
+
+        span {
+          background-color: $col-brand-main;
+        }
+
+        &:before,
+        &:after {
+          background-color: $col-brand-main;
+        }
+      }
+    }
+
+    .header-menu {
+
+      &__logo {
+
+        &-color {
+          display: inline;
+        }
+
+        &-white {
+          display: none;
+        }
+      }
+
+      &__phone {
+        font-weight: 600;
+
+        a {
+          color: $col-bg-dark_icon !important;
+
+          @media only screen and (min-width: 980px) {
+            @include bg-brand-30;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &:hover {
+            color: $col-brand-addnl !important;
+          }
+        }
+      }
+
+      &__fav {
+
+        a {
+
+          span {
+            color: $col-brand-main;
+          }
+
+          &:hover {
+
+            span {
+              color: $col-brand-addnl;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_page-contacts {
+    position: relative;
+  }
+
+  &_page-blog {
+
+    .header-menu {
+
+      &__question,
+      &__callback {
+        display: none;
+      }
+
+      &__phone {
+
+        @media only screen and (min-width: 980px) {
+          display: none;
+        }
+      }
+
+      &__catalog {
+        display: block;
+      }
+    }
+  }
+
+  &_page-articles {
+
+    .header-menu {
+
+      &__selection,
+      &__question,
+      &__callback,
+      &__phone {
+        display: none;
+      }
+
+      &__blog-search {
+        display: block;
+      }
+
+      &__articles {
+        display: block;
+      }
+    }
+  }
+}

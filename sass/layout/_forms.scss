@@ -1,0 +1,210 @@
+form {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+
+  @media only screen and (min-width: 600px) {
+    text-align: left;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 9px 18px;
+    background: transparent;
+    border: 1px solid #b5b5b5;
+    font-family: $ff_main;
+    font-size: $fz_m;
+    color: rgba(0,0,0,.35);
+    @include border-radius(5px);
+
+    &.error {
+      border: 1px solid #ec004e;
+    }
+  }
+
+  input[type=submit] {
+    margin-bottom: 0;
+    padding: 9px 55px;
+    border: none;
+    color: rgba(0,0,0,.65);
+
+    @media only screen and (min-width: 600px) {
+      width: auto;
+    }
+  }
+
+  .form {
+
+    &__header {
+      text-align: left;
+      line-height: 31px !important;
+      @include clearfix;
+
+      &-title {
+        float: left;
+        margin-bottom: 16px;
+      }
+
+      &-chat {
+        float: right;
+        margin-bottom: 30px;
+
+        a {
+          position: relative;
+          bottom: -0.175em;
+          margin-left: 10px;
+          border-bottom: none;
+          font-size: $fz_b - 1 !important;
+          color: $col-bg-dark_main;
+          opacity: .5;
+          @include transition(opacity .2s ease, color .2s ease);
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &__grid {
+
+      @media only screen and (min-width: 600px) {
+        @include clearfix;
+      }
+    }
+
+    &__column {
+
+      @media only screen and (min-width: 600px) {
+        float: left;
+        width: 40%;
+      }
+
+      &:nth-child(even) {
+
+        @media only screen and (min-width: 600px) {
+          width: 60%;
+          padding-left: 15px;
+        }
+      }
+    }
+
+    &__input-wrapper {
+      position: relative;
+      margin-bottom: 15px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        display: block;
+        border: 1px solid $col-brand_main;
+        @include border-radius(5px);
+        @include skewX(-12deg);
+      }
+
+      input {
+        padding: 10px 19px;
+        margin-bottom: 0;
+        border: none;
+        @include border-radius(0);
+      }
+
+      &.error {
+        
+        &:after {
+          border: 1px solid #ec004e;
+        }
+      }
+    }
+
+    &__submit-wrapper {
+      position: relative;
+
+      @media only screen and (min-width: 600px) {
+        display: inline-block;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        display: block;
+        z-index: -1;
+        opacity: 0;
+        @include bg-brand-30;
+        @include border-radius(5px);
+        @include skewX(-12deg);
+        @include transition(opacity 400ms ease);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -2;
+        display: block;
+        border-left: 2px solid $col-brand_addnl;
+        border-right: 2px solid $col-brand_main;
+        border-top: 2px solid $col-brand_addnl;
+        border-bottom: 2px solid $col-brand_main;
+        @include border-radius(5px);
+        @include skewX(-12deg);
+      }
+
+      &:hover {
+        border: none;
+        color: $col-wh !important;
+
+        &:before {
+          opacity: 1;
+        }
+
+        input {
+          color: $col-wh;
+        }
+      }
+    }
+
+    &__fill-fields-text {
+      font-size: $fz_s - 1;
+      opacity: .5;
+      margin-bottom: 15px;
+
+      @media only screen and (min-width: 600px) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 215px;
+        margin-bottom: 0;
+        @include translate3d(0,-50%,0);
+      }
+    }
+
+    &__send-block {
+      position: relative;
+    }
+  }
+}
+
+html[lang=en] {
+
+  .form__fill-fields-text {
+
+    @media only screen and (min-width: 600px) {
+      left: 165px !important;
+    }
+  }
+}

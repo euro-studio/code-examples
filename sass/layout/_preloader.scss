@@ -1,0 +1,44 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999999999999999;
+  background-color: $col-bg-dark_addnl;
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 85px;
+    opacity: 0;
+    margin: -42.5px 0 0 -100px;
+    @include scale(0);
+    @include transition(opacity 1s ease, transform 1s ease-in);
+
+    @media only screen and (min-width: 600px) {
+      width: 250px;
+      height: 106px;
+      margin: -53px 0 0 -125px;
+    }
+  }
+
+  &.start {
+
+    .preloader {
+
+      &__logo {
+        opacity: .75;
+        @include scale(1);
+      }
+    }
+  }
+
+  &.stop {
+    opacity: 0;
+    @include scale(5);
+    @include transition(opacity 1s ease, transform 1s ease);
+  }
+}
