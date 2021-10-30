@@ -1,5 +1,5 @@
 <?php
-/* Склонение слов */
+/* Склонение слов */ 
 /** @var array $scriptProperties */
 $number = $modx->getOption('input', $scriptProperties, 0);
 $forms = $modx->getOption('options', $scriptProperties, '');
