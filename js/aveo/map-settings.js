@@ -1,7 +1,7 @@
 function initialize() {
   cyprusMap();
 }
-
+ 
 var map,
     marker,
     markerArray = [];
