@@ -9,7 +9,7 @@ var Preloader = function(images, opt_callback) {
   this.loadEvent = jQuery.Event('images_load');
   this.body_ = jQuery('body');
 };
-
+ 
 Preloader.prototype.init = function() {
   this.body_.addClass('loading');
   this.loaderEl_ = jQuery('<div class="loader"/>');
