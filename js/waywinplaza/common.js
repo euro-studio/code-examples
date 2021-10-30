@@ -1,4 +1,4 @@
-// Стрелка вверх
+// Стрелка вверх 
 
 if ($(window).width() >= 980) {
 	var arrowBlock = $('div#top_arrow'); // Задаем имя стрелки
