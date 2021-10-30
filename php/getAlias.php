@@ -1,6 +1,6 @@
 <?php
 $ids = explode(",", $modx->getOption('input', $scriptProperties));
-
+ 
 $context = $modx->getOption('context', $scriptProperties, $modx->context->key);
 $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties, true);
 
