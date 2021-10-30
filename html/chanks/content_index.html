@@ -1,0 +1,277 @@
+<div id="home-slider" class="home-slider">
+
+    <div class="home-slider__header">
+        <div class="home-slider__logo">
+            <a href="[[~1]]" title="[[%copyright? &namespace=`aveo`]]"><img src="/tpl/img/logo-white.svg"
+                                                                            alt="[[%copyright? &namespace=`aveo`]]"></a>
+        </div>
+        <div class="home-slider__feedback">
+            <ul>
+                <li><a class="home-slider__fav" href="[[~8]]"><span class="msfavorites-total" data-data-list="default"
+                                                                    data-value="0"></span><i
+                        class="icon-fav-menu-big"></i></a></li>
+                <li><a class="popup-link" href="[[~15]]">[[%ask_question? &namespace=`aveo`]]</a></li>
+                <li><a class="popup-link" href="[[~12]]">[[%callback? &namespace=`aveo`]]</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="home-slider__viewport">
+        [[!pdoResources?
+        &parents = `25`
+        &sortby = `RAND()`
+        &limit = `5`
+        &tpl = `tpl.homeSlider`
+        &includeTVs = `objectCity,objectType,objectPriceMin,objectAreaBuildingMin,objectAreaBuildingMax,objectRoomsBed`
+        &where = `{
+        "object_status":"available"
+        }`
+        ]]
+    </div>
+
+    <div class="home-slider__footer">
+        <!--div class="home-slider__menu">
+          [[!pdoMenu? 
+            &parents = `33`
+          ]]
+        </div-->
+        <div class="home-slider__social">
+            <span class="home-slider__social-text">[[%we_in_social? &namespace=`aveo`]]:</span>
+            <a class="home-slider__social-icon" href="https://www.facebook.com/aveo.property/" target="_blank"><i
+                    class="icon-fb"></i></a>
+            <a class="home-slider__social-icon" href="https://vk.com/aveo.property" target="_blank"><i
+                    class="icon-vk"></i></a>
+            <a class="home-slider__social-icon" href="https://twitter.com/aveo_property" target="_blank"><i
+                    class="icon-tw"></i></a>
+            <div class="home-slider__social-more">
+                <a class="home-slider__social-icon" href="https://www.instagram.com/aveo.property/" target="_blank"><i
+                        class="icon-insta"></i></a>
+                <a class="home-slider__social-icon" href="https://ok.ru/aveo.property" target="_blank"><i
+                        class="icon-ok"></i></a>
+                <a class="home-slider__social-icon" href="https://t.me/aveo_property" target="_blank"><i
+                        class="icon-tel"></i></a>
+            </div>
+            <span class="home-slider__social-icon more"><i class="icon-more"></i></span>
+        </div>
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="main__header">
+        <div class="main__nav">
+            <div class="main__phone"><a href="tel:+35796228778">+357 96 228-778</a></div>
+            <div class="sitemap-nav">
+                <span class="sitemap-nav__langs">[[BabelLinks? &showCurrent=`0`  &tpl=`tpl.bubelLinks`]]</span>
+                [[$sitemapNav]]
+            </div>
+        </div>
+        <div class="main__greeting">
+            <div class="main__welcome">Добро пожаловать в мир недвижимости Кипра <span>Aveo Property</span></div>
+            <div class="main__emblem"><img src="/tpl/img/emblem.svg" alt="[[%copyright? &namespace=`aveo`]]"></div>
+        </div>
+    </div>
+
+    <div class="main__menu">
+        [[!pdoMenu?
+        &parents = `0`
+        &resources = `21, 41, 35, 39`
+        &tpl = `tpl.homeMenu`
+        ]]
+    </div>
+
+    <div class="main__property">
+        <span class="main__selection"><a href="[[~17]]"
+                                         class="popup-link btn">[[%order_selection_housing? &namespace=`aveo`]]</a></span>
+        <span class="main__choice">[[%or? &namespace=`aveo`]]</span>
+        <span class="main__search purple"><a href="[[~57]]"
+                                             class="popup-link icon-search-main">[[%find_property? &namespace=`aveo`]]</a></span>
+    </div>
+
+</div>
+
+<div class="lpb-container">
+
+    <!--div class="links">
+      <div class="links__item">
+        <div class="links__text">
+          <div class="links__link">
+            <a class="popup-link" href="[[~107]]" title="Ваши выгоды от участия в инвестиционной программе Кипра.">Ваши выгоды от участия в инвестиционной программе Кипра.</a>
+          </div>
+        </div>
+      </div>
+      <div class="links__item">
+        <div class="links__text">
+          <div class="links__link">
+            <a class="popup-link" href="[[~103]]" title="6 шагов по пути к Гражданству ЕС — процедура покупки недвижимости.">6 шагов по пути к Гражданству ЕС — процедура покупки недвижимости.</a>
+          </div>
+        </div>
+      </div>
+    </div-->
+
+    <div id="pdopage" class="popular">
+
+        [[!+page.nav]]
+        <div class="catalog catalog_blocks-view">
+            [[!pdoPage?
+            &parents = `25`
+            &limit = `8`
+            &maxLimit = `24`
+            &tpl = `tpl.catalogItem`
+            &setMeta = `0`
+            &where = `{
+            "object_status":"available"
+            }`
+            &ajaxElemRows = `#pdopage .catalog`
+            &ajaxElemMore = `#pdopage .btn-more`
+            &ajaxMode = `button`
+            &ajaxTplMore = `@INLINE`
+            &frontend_css = ``
+            ]]
+        </div>
+
+        <div class="popular-btns">
+            <span class="btn btn-default btn-more popular-btns__more">[[%more_properties? &namespace=`aveo`]]</span>
+            <a href="[[~19]]" title="[[%properties_on_map? &namespace=`aveo`]]"
+               class="btn purple popular-btns__map">[[%properties_on_map? &namespace=`aveo`]]</a>
+            <a href="[[~21]]" title="[[%go_to_catalog? &namespace=`aveo`]]"
+               class="popular-btns__catalog">[[%go_to_catalog? &namespace=`aveo`]]</a>
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <div class="cyprus">
+            <div class="cyprus__grid">
+                <div class="cyprus__column">
+                    <div class="cyprus__img"><img src="/tpl/img/bg-home-cyprus.png" alt="Влюбиться в Кипр"></div>
+                </div>
+                <div class="cyprus__column">
+                    <div class="cyprus__title">Влюбиться с одного взгляда! Жизнь на Кипре, как она есть.</div>
+                    <div class="cyprus__link"><a href="[[~105]]" title="Почитать о Кипре"
+                                                 class="popup-link btn">Почитать о Кипре</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog">
+            <div class="blog__title">
+                <a href="[[~41]]" title="[[%useful_blog? &namespace=`aveo`]]">[[%useful_blog? &namespace=`aveo`]]</a>
+            </div>
+            [[!pdoResources?
+            &parents = `41`
+            &limit = `5`
+            &tpl = `tpl.homeBlog`
+            &where = `{
+            "hidemenu":"0"
+            }`
+            ]]
+        </div>
+
+        <div class="map">
+            <div class="map__img"><img src="/tpl/img/bg-home-map.png" alt="[[%properties_on_map? &namespace=`aveo`]]">
+            </div>
+            <div class="map__link"><a href="[[~19]]" title="[[%show_on_map? &namespace=`aveo`]]"
+                                      class="btn purple">[[%show_on_map? &namespace=`aveo`]]</a></div>
+        </div>
+
+    </div>
+</div>
+
+<div class="company">
+    <div class="company__content">
+
+        <div class="about">
+            <div class="about__cat"><img src="/tpl/img/home-company-cat.png" alt="[[%copyright? &namespace=`aveo`]]">
+            </div>
+            <p class="about__intro">Мы открыли компанию Aveo Property, чтобы объединить усилия профессионалов и создать лучшие условия для приобретения элитной недвижимости.</p>
+            <p>Команда опытных риэлторов работает с объектами мирового рынка недвижимости, сотрудничая только с проверенными девелоперами и предпринимателями с безупречной репутацией. С нами Вы сможете быстро и без проволочек приобрести зарубежную недвижимость и получить гражданство ЕС.</p>
+            <p>На каждом из этапов поиска и покупки объекта Вам предоставят информацию по любому возникшему вопросу. Какими бы сложными не были запросы, мы оперативно ищем и находим самые оптимальные варианты!</p>
+            <p class="about__advantage">
+                <span>Преимущество</span> компании заключается в персональном сопровождении клиента с первого звонка до вселения в апартаменты.
+            </p>
+            <p class="about__narrow">Наша команда делает все для того, чтобы помогать как покупателям-инвесторам, так и профессионалам рынка. Aveo Property предоставляет большое количество сопутствующих услуг в сфере недвижимости по курированию сделки, ведению документации, управлению объектами, юридическому сопровождению, страхованию, финансовым вопросам, получению ипотеки, легализации бизнеса. А наша виртуальная площадка поможет Вам купить недвижимость заданных параметров.
+                <a href="[[~35]]">Подробнее об агентстве…</a></p>
+            <p class="about__slogan"><span>Мы действуем честно и открыто!</span></p>
+            <div class="about__signature">С уважением,<br> команда Aveo Property</div>
+        </div>
+
+        <div class="home-adv">
+            <div class="home-adv__mask">
+                <svg viewBox="0 0 100 5.25">
+                    <polygon points="100 0 0 5.25 0 0 100 0">
+                </svg>
+            </div>
+            <div class="home-adv__viewport">
+                <div class="home-adv__items">
+                    <div class="home-adv__item adv__item_1" data-img="bg-home-banner-item-1">
+                        <div class="home-adv__digit">0€</div>
+                        <div class="home-adv__desc">
+                            <div class="home-adv__controls">
+                                <div class="home-adv__control home-adv__control_prev"><i class="icon-home-adv-left"></i>
+                                </div>
+                                <div class="home-adv__control home-adv__control_next"><i
+                                        class="icon-home-adv-right"></i></div>
+                                <div class="home-adv__bullets"></div>
+                            </div>
+                            <span class="home-adv__title">— покупая недвижимсть у нас, Вы не переплачиваете ни единого евро.</span>
+                            <span class="home-adv__text">Наше агентство является официальным представителем республики Кипр и все цены соответствуют ценам застройщика.</span>
+                        </div>
+                    </div>
+                    <div class="home-adv__item adv__item_2" data-img="bg-home-banner-item-2">
+                        <div class="home-adv__digit">24/7</div>
+                        <div class="home-adv__desc">
+                            <div class="home-adv__controls">
+                                <div class="home-adv__control home-adv__control_prev"><i class="icon-home-adv-left"></i>
+                                </div>
+                                <div class="home-adv__control home-adv__control_next"><i
+                                        class="icon-home-adv-right"></i></div>
+                                <div class="home-adv__bullets"></div>
+                            </div>
+                            <span class="home-adv__title">— пошаговое сопровождение и консультирование 24 часа в сутки.</span>
+                            <span class="home-adv__text">Каждую сделку мы сопровождаем на всех этапах - от выбора недвижимости до получения гражданства ЕС, экономя Ваше время и минимизируя риски.</span>
+                        </div>
+                    </div>
+                    <div class="home-adv__item adv__item_3" data-img="bg-home-banner-item-3">
+                        <div class="home-adv__digit">100%</div>
+                        <div class="home-adv__desc">
+                            <div class="home-adv__controls">
+                                <div class="home-adv__control home-adv__control_prev"><i class="icon-home-adv-left"></i>
+                                </div>
+                                <div class="home-adv__control home-adv__control_next"><i
+                                        class="icon-home-adv-right"></i></div>
+                                <div class="home-adv__bullets"></div>
+                            </div>
+                            <span class="home-adv__title">— мы не предлагаем некачественные объекты нашим покупателям.</span>
+                            <span class="home-adv__text">Мы работаем только с надежными и проверенными застройщиками. Каждый объект недвижимости лично осматривает наш специалист.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h3>Что говорят наши клиенты</h3>
+            <div class="reviews__item">
+                <p>Мы с женой искали недвижимость в закрытом комплексе вблизи от пляжа Корал Бэй и со всеми удобствами, с хорошей и развитой инфраструктурой – бассейном, спортзалом, парковкой и пр. В Aveo Property нас внимательно выслушали, уточнили наши пожелания и вуаля! Мы приобрели дом мечты, именно такой, который хотели. Далее, в течение нескольких месяцев мы получили ПМЖ для себя и наших детей. Спасибо, ребята, за вашу помощь и поддержку, вы профессионалы своего дела.</p>
+                <div class="reviews__author">Владимир С.<br> г. Москва</div>
+            </div>
+            <div class="reviews__link"><a href="[[~47]]" title="Кейсы и отзывы покупателей"
+                                          class="btn">Кейсы и отзывы покупателей</a></div>
+        </div>
+
+    </div>
+
+    <div class="company__fixed">
+
+        <div class="company-fixed__social-copyright">
+            <div class="company-fixed__social">
+                <div class="ya-share2" data-services="facebook,vkontakte,twitter,odnoklassniki,gplus,whatsapp,telegram"
+                     data-bare></div>
+            </div>
+            <div class="company-fixed__copyright">© [[!getDate:date=`%Y`]] [[%copyright? &namespace=`aveo`]]</div>
+        </div>
+
+    </div>
+</div>
