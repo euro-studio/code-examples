@@ -1,0 +1,365 @@
+<div id="page" class="page">
+    <div class="object">
+        <div class="object__gallery">
+            <div class="gallery__header">
+                <div class="gallery__logo">
+                    <a href="[[~[[BabelTranslation? &resourceId=`1`]]]]" title="[[%copyright? &namespace=`aveo`]]"><img
+                            src="/tpl/img/logo-white.svg" alt="[[%copyright? &namespace=`aveo`]]"></a>
+                </div>
+                <div class="gallery__feedback">
+                    <ul>
+                        <li class="phone"><a href="tel:+74959606066">+7 495 960-60-66</a></li>
+                        <li><a class="popup-link"
+                               href="[[~[[BabelTranslation? &resourceId=`12`]]]]">[[%callback? &namespace=`aveo`]]</a>
+                        </li>
+                        <li><a class="popup-link"
+                               href="[[~[[BabelTranslation? &resourceId=`15`]]]]">[[%ask_question? &namespace=`aveo`]]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            [[!ms2Gallery?
+            &tpl=`tpl.ms2GalleryObject`
+            &frontend_css=``
+            &frontend_js=``
+            ]]
+            <div class="gallery__social">
+                <div class="ya-share2" data-services="facebook,vkontakte,twitter,odnoklassniki,whatsapp,telegram"
+                     data-bare></div>
+            </div>
+        </div>
+        <div class="object__desc">
+
+            <div class="object__header">
+                <div class="header__crumbs">
+                    <ul>
+                        [[*object_type:notempty=`
+                        <li>
+                            <a href="[[~[[BabelTranslation? &resourceId=`21`]]]][[*object_type:vPageLink]]/">[[%[[*object_type]]? &namespace=`aveo`]]</a>
+                        </li>
+                        `]]
+                        [[*object_city:notempty=`
+                        <li>
+                            <a href="[[~[[BabelTranslation? &resourceId=`21`]]]][[*object_city:vPageLink]]/">[[%[[*object_city]]? &namespace=`aveo`]]</a>
+                        </li>
+                        `]]
+                        [[*object_area:notempty=`
+                        <li>
+                            <a href="[[~[[BabelTranslation? &resourceId=`21`]]]][[*object_area:vPageLink]]/">[[%[[*object_area]]? &namespace=`aveo`]]</a>
+                        </li>
+                        `]]
+                    </ul>
+                </div>
+                <div class="header__actions">
+                    <div class="header__actions-item header__search"><a
+                            href="[[~[[BabelTranslation? &resourceId=`57`]]]]" class="popup-link"><i
+                            class="icon-search-menu"></i></a></div>
+                    <div class="header__actions-item header__fav"><a class="icon-fav"
+                                                                     href="[[~[[BabelTranslation? &resourceId=`8`]]]]"
+                                                                     rel="nofollow"><span class="msfavorites-total"
+                                                                                          data-data-list="default"
+                                                                                          data-value="0"></span><i
+                            class="icon-fav-menu"></i></a></div>
+                </div>
+                <div class="sitemap-nav">[[$sitemapNav]]</div>
+            </div>
+
+            <div class="object__intro">
+                <div class="intro__announce">
+                    <div class="intro__text">
+                        <div class="intro__actions">
+                            <div class="intro__fav-id">
+                                <div class="intro__fav">
+                                    <a class="msfavorites" data-click dada-data-key="[[*id]]"
+                                       data-data-list="default"><i class="icon-fav-object"></i></a>
+                                </div>
+                                <div class="intro__id">ID: [[*alias]]</div>
+                            </div>
+                            <div class="intro__pdf-print">
+                                <div class="intro__pdf">
+                                    [[!exp.File.Request?
+                                    &tpl=`@INLINE <a href="[[+uri_request]]">[[%save_to_pdf? &namespace=`aveo`]]</a>`
+                                    &resource = `[[*id]]`
+                                    &set = `1`
+                                    &mode = `direct`
+                                    &type=`pdf`
+                                    &action=`files/request`
+                                    &real = `1`
+                                    ]]
+                                </div>
+                                <div class="intro__print"><span>[[%print? &namespace=`aveo`]]</span></div>
+                            </div>
+                        </div>
+                        <div class="intro__title">
+                            <h1>[[*longtitle]][[*object_area_building_min:notempty=`, [[%from? &namespace=`aveo`]] [[*object_area_building_min]] [[%m2? &namespace=`aveo`]]`]][[*object_city:notempty=`, [[%[[*object_city]]? &namespace=`aveo`]]`]]</h1>
+                        </div>
+                        <div class="intro__price">
+                            [[*object_status:isnot=`sold`:then=`[[*object_price_min:isnot=``:then=`<span>[[%from? &namespace=`aveo`]]<span> [[*object_price_min:num]] €</span></span>`:else=`<span
+                                class="request">[[%on_request? &namespace=`aveo`]]</span>`]]`:else=`<span
+                                class="sold">[[%object_sold? &namespace=`aveo`]]</span>`]]
+                        </div>
+                        <div class="intro__location">
+                            [[*object_city:notempty=`
+                            <div class="intro__city"><a
+                                    href="[[~[[BabelTranslation? &resourceId=`21`]]]][[*object_city:vPageLink]]/">[[%[[*object_city]]? &namespace=`aveo`]]</a>
+                            </div>
+                            `]]
+                            [[*object_area:notempty=`
+                            <div class="intro__area"><span>[[%area_d? &namespace=`aveo`]]: </span><a
+                                    href="[[~[[BabelTranslation? &resourceId=`21`]]]][[*object_area:vPageLink]]/">[[%[[*object_area]]? &namespace=`aveo`]]</a>
+                            </div>
+                            `]]
+                            <div class="intro__map"><a href="[[~[[*id]]]]#map-container"
+                                                       class="anchor-link">[[%on_map? &namespace=`aveo`]]</a></div>
+                        </div>
+                        <div class="intro__btns">
+                            [[*object_status:isnot=`sold`:then=`<a href="[[~[[BabelTranslation? &resourceId=`63`]]]]"
+                                                                   class="btns__request btn popup-link">[[%request_property? &namespace=`aveo`]]</a>`:else=`<a
+                                href="[[~[[BabelTranslation? &resourceId=`57`]]]]"
+                                class="btns__search btn popup-link">[[%new_search? &namespace=`aveo`]]</a>`]]
+                            <a href="[[~[[BabelTranslation? &resourceId=`15`]]]]"
+                               class="btns__question btn popup-link">[[%ask_question? &namespace=`aveo`]]</a>
+                        </div>
+                    </div>
+                    <div class="intro__thumb print">
+                        [[!ms2Gallery?
+                        &tpl=`@INLINE <img src="{if $files?}{$files[0]['hd']}{else}/tpl/img/no-photo.jpg{/if}">`
+                        &limit = `1`
+                        &frontend_css=``
+                        &frontend_js=``
+                        ]]
+                    </div>
+                </div>
+
+                [[!paramsCols? &fields=`object_area_building_min,object_area_land_min,object_rooms_bedrooms,object_location,object_view`]]
+
+                <div class="params">
+                    <div class="params__section">
+                        <div class="params__title">[[%type? &namespace=`aveo`]]</div>
+                        <div class="params__dotted">
+                            <div class="params__dotted-line"></div>
+                        </div>
+                        <div class="params__value">[[%[[*object_type]]? &namespace=`aveo`]]</div>
+                    </div>
+
+                    [[*object_area_building_min:notempty=`
+                    <div class="params__section">
+                        <div class="params__title"><span
+                                class="abbr">[[%building_area_abbr? &namespace=`aveo`]]</span><span
+                                class="full">[[%building_area? &namespace=`aveo`]]</span></div>
+                        <div class="params__dotted">
+                            <div class="params__dotted-line"></div>
+                        </div>
+                        <div class="params__value">[[*object_area_building_min]][[*object_area_building_max:notempty=` — [[*object_area_building_max]]`]] [[%m2? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+
+                    [[*object_area_land_min:notempty=`
+                    <div class="params__section">
+                        <div class="params__title"><span class="abbr">[[%land_area_abbr? &namespace=`aveo`]]</span><span
+                                class="full">[[%land_area? &namespace=`aveo`]]</span></div>
+                        <div class="params__dotted">
+                            <div class="params__dotted-line"></div>
+                        </div>
+                        <div class="params__value">[[*object_area_land_min]][[*object_area_land_max:notempty=` — [[*object_area_land_max]]`]] [[%m2? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+
+                    [[*object_rooms_bedrooms:notempty=`
+                    <div class="params__section">
+                        <div class="params__title">[[%bedrooms? &namespace=`aveo`]]</div>
+                        <div class="params__dotted">
+                            <div class="params__dotted-line"></div>
+                        </div>
+                        <div class="params__value">[[*object_rooms_bedrooms:tvCheckboxLexiconRooms]]</div>
+                    </div>
+                    `]]
+
+                    [[*object_location:notempty=`
+                    <div class="params__section">
+                        <div class="params__title"><span class="abbr">[[%location_abbr? &namespace=`aveo`]]</span><span
+                                class="full">[[%location? &namespace=`aveo`]]</span></div>
+                        <div class="params__dotted">
+                            <div class="params__dotted-line"></div>
+                        </div>
+                        <div class="params__value">[[*object_location:tvCheckboxLexiconFeatures]]</div>
+                    </div>
+                    `]]
+
+                    [[*object_view:notempty=`
+                    <div class="params__section">
+                        <div class="params__title">[[%window_view? &namespace=`aveo`]]</div>
+                        <div class="params__dotted">
+                            <div class="params__dotted-line"></div>
+                        </div>
+                        <div class="params__value">[[*object_view:tvCheckboxLexiconFeatures]]</div>
+                    </div>
+                    `]]
+                </div>
+
+            </div>
+
+            [[*introtext:notempty=`
+            <div class="introtext">[[*introtext]]</div>
+            `]]
+
+            <div class="object__content">
+                <h2>[[%features? &namespace=`aveo`]]</h2>
+                [[*object_additional:notempty=`
+                <div class="features">
+                    <ul>
+                        <li>[[*object_additional:tvCheckboxLexicon]]</li>
+                    </ul>
+                </div>
+                `]]
+                [[*object_content_features]]
+                [[*distance_sea:isnot=``:or:if=`[[*distance_city_centre]]`:isnot=``:or:if=`[[*distance_marina]]`:isnot=``:or:if=`[[*distance_golf]]`:isnot=``:or:if=`[[*distance_eng_school]]`:isnot=``:or:if=`[[*distance_airport]]`:isnot=``:then=`
+                <div class="distances">
+                    [[*distance_sea:notempty=`
+                    <div class="distances__item distances__item_sea">
+                        <div class="distances__value">[[*distance_sea:distanceConvert]] [[%minutes_abbr? &namespace=`aveo`]]</div>
+                        <div class="distances__note">[[%sea? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+                    [[*distance_city_centre:notempty=`
+                    <div class="distances__item distances__item_centre">
+                        <div class="distances__value">[[*distance_city_centre:distanceConvert]] [[%minutes_abbr? &namespace=`aveo`]]</div>
+                        <div class="distances__note">[[%centre? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+                    [[*distance_marina:notempty=`
+                    <div class="distances__item distances__item_marina">
+                        <div class="distances__value">[[*distance_marina:distanceConvert]] [[%minutes_abbr? &namespace=`aveo`]]</div>
+                        <div class="distances__note">[[%marina? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+                    [[*distance_golf:notempty=`
+                    <div class="distances__item distances__item_golf">
+                        <div class="distances__value">[[*distance_golf:distanceConvert]] [[%minutes_abbr? &namespace=`aveo`]]</div>
+                        <div class="distances__note">[[%golf? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+                    [[*distance_eng_school:notempty=`
+                    <div class="distances__item distances__item_eng-school">
+                        <div class="distances__value">[[*distance_eng_school:distanceConvert]] [[%minutes_abbr? &namespace=`aveo`]]</div>
+                        <div class="distances__note">[[%eng_school? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+                    [[*distance_airport:notempty=`
+                    <div class="distances__item distances__item_airport">
+                        <div class="distances__value">[[*distance_airport:distanceConvert]] [[%minutes_abbr? &namespace=`aveo`]]</div>
+                        <div class="distances__note">[[%airport? &namespace=`aveo`]]</div>
+                    </div>
+                    `]]
+                </div>
+                `]]
+                [[*object_content_location:notempty=`
+                <h2>[[%location? &namespace=`aveo`]]</h2>
+                [[*object_content_location]]
+                `]]
+            </div>
+
+            [[*object_latitude:notempty=`
+            <div id="map-container" class="map-container">
+                <div class="map-toggler">
+                    <div class="map-toggler__item map-toggler__item_object active">[[%on_map? &namespace=`aveo`]]</div>
+                    <div class="map-toggler__item map-toggler__item_nearby">[[%properties_nearby? &namespace=`aveo`]]</div>
+                </div>
+                <div id="object-map" class="map active"></div>
+                <div id="nearby-map" class="map"></div>
+            </div>
+            <div class="print-map print"><img
+                    src="https://maps.googleapis.com/maps/api/staticmap?&zoom=12&size=550x300&scale=2&markers=icon:https://aveo.property//tpl/img/iconMapLocate.svg%7C[[*object_latitude]],[[*object_longitude]]&style=feature:administrative.neighborhood%7Cvisibility:off&style=feature:landscape%7Csaturation:-70%7Clightness:60&style=feature:landscape.natural%7Celement:labels%7Cvisibility:off&style=feature:poi%7Cvisibility:off&style=feature:poi.business%7Celement:geometry%7Cvisibility:on&style=feature:poi.park%7Celement:geometry%7Cvisibility:on&style=feature:road%7Cweight:1&style=feature:road%7Celement:geometry.stroke%7Cvisibility:off&style=feature:road%7Celement:labels.icon%7Cvisibility:off&style=feature:road.local%7Celement:labels.text%7Ccolor:0xd5d5d5&style=feature:road.local%7Celement:labels.text.stroke%7Cvisibility:off&style=feature:transit%7Cvisibility:off&style=feature:transit.station.airport%7Cvisibility:on&style=feature:water%7Ccolor:0x38a9e0%7Clightness:60&language=[[++cultureKey]]&key=AIzaSyBJmEFXkOwq9cKFn77HXHYpiNNp-Tf4VI4"
+                    alt=""></div>
+            `]]
+
+            <div class="webpage print"><img src="[[getQRcode? &id=`ne` &text=`[[++site_url]][[~[[*id]]]]`]]"><span>[[%webpage? &namespace=`aveo`]]:<br>[[++site_url]][[~[[*id]]]]</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="new-search">
+        <a href="[[~[[BabelTranslation? &resourceId=`57`]]]]"
+           class="btn popup-link">[[%new_search? &namespace=`aveo`]]</a>
+        <div class="properties-filter form">
+            <div class="fields">
+                <div class="field type list">
+                    <div class="selected" data-field="type" data-value>[[%properties_type? &namespace=`aveo`]]</div>
+                    <ul class="options">
+                        [[!tagLister? &tv=`objectType` &tpl=`tpl.tagListerFilter`]]
+                    </ul>
+                </div>
+                <div class="field bedrooms list">
+                    <div class="selected" data-field="bedrooms" data-value>[[%bedrooms? &namespace=`aveo`]]</div>
+                    <ul class="options multiple">
+                        <li data-value="1">1</li>
+                        <li data-value="2">2</li>
+                        <li data-value="3">3</li>
+                        <li data-value="4">4+</li>
+                    </ul>
+                </div>
+                <div class="field price-min">
+                    <input class="selected" type="text" data-field="price_min"
+                           placeholder="[[%from? &namespace=`aveo`]]" data-value="0">
+                </div>
+                <div class="field price-max">
+                    <input class="selected" type="text" data-field="price_max" placeholder="[[%to? &namespace=`aveo`]]"
+                           data-value="999999999">
+                </div>
+                <div class="field area-min">
+                    <input class="selected" type="text" data-field="b_area"
+                           placeholder="[[%min_area? &namespace=`aveo`]]" data-value>
+                    <div class="sq-m">[[%m2? &namespace=`aveo`]]</div>
+                </div>
+                <div class="field city list">
+                    <div class="selected" data-field="city" data-value>[[%region? &namespace=`aveo`]]</div>
+                    <ul class="options">
+                        [[!tagLister? &tv=`objectCity` &tpl=`tpl.tagListerFilter`]]
+                    </ul>
+                </div>
+            </div>
+            <div class="submit">
+                <button type="button">[[%find? &namespace=`aveo`]]</button>
+            </div>
+        </div>
+    </div>
+
+    [[$requestSelection]]
+
+    <div class="similar-objects">
+        <div class="similar-objects__header">
+            <div class="similar-objects__title"><h3>[[%similar_properties? &namespace=`aveo`]]</h3></div>
+            <div class="similar-objects__link"><a
+                    href="[[~[[BabelTranslation? &resourceId=`21`]]]]">[[%go_to_catalog? &namespace=`aveo`]]</a></div>
+        </div>
+        <div class="catalog catalog_grid">
+            [[*object_price_min:isnot=``:then=`
+            [[!pdoResources?
+            &parents = `[[BabelTranslation? &resourceId=`25`]]`
+            &limit = `4`
+            &sortby = `RAND()`
+            &tpl = `tpl.similarItem`
+            &where = `{
+            "id:!=":"[[*id]]",
+            "object_status":"available",
+            "object_type":"[[*object_type]]",
+            "object_price_min:>=":"[[*object_price_min:decr=`[[*object_price_min:mpy=`0.25`]]`]]",
+            "object_price_min:<=":"[[*object_price_min:add=`[[*object_price_min:mpy=`0.25`]]`]]"
+            }`
+            ]]
+            `:else=`
+            [[!pdoResources?
+            &parents = `[[BabelTranslation? &resourceId=`25`]]`
+            &limit = `4`
+            &sortby = `RAND()`
+            &tpl = `tpl.similarItem`
+            &where = `{
+            "id:!=":"[[*id]]",
+            "object_status":"available",
+            "object_type":"[[*object_type]]"
+            }`
+            ]]
+            `]]
+        </div>
+    </div>
+</div>
