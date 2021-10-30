@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- (c) Eugene Rozhnenkov | euro-studio@yandex.ru -->
+<html lang="[[++cultureKey]]">
+
+<head>
+    <meta charset="[[++modx_charset]]">
+    <base href=[[++site_url]]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>[[pageTitle]] - [[++site_name]]</title>
+    <meta name="description" content="[[pageDescription]]">
+    <meta property="og:title" content="[[pageTitle]]">
+    <meta property="og:description" content="[[pageDescription]]">
+    <meta property="og:image" content="[[++site_url]]tpl/img/aveo_social.png">
+    <link rel="image_src" href="[[++site_url]]tpl/img/aveo_social.png">
+    <link rel="canonical" href="[[~[[*id]]? &scheme=`full`]]">
+    <link rel="stylesheet" href="/tpl/css/main.css?v=19.02.15.1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons//favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#38a9df">
+    <meta name="msapplication-TileColor" content="#303f48">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="yandex-tableau-widget" content="logo=https://aveo.property/favicons/yandex-tableau.png, color=#303f48">
+    <meta name="google-site-verification" content="azZRzSJf2lt5Xux2Qx_vf86G4kgodl_o32tyVYWmKxc">
+    <meta name="yandex-verification" content="98f5accaca4d7d12">
+    <meta name="yandex-verification" content="ba6c100432249fb1">
+    <meta name="yandex-verification" content="bb6dbb3495fdacfc">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/tpl/js/lib/jquery-3.3.1.min.js"><\/script>');</script>
+
+    <script src="/tpl/js/common.js?v=19.02.15.1"></script>
+    <script src="/tpl/js/lib/fotorama.min.js"></script>
+
+    [[!msFavorites.initialize]]
+</head>
+
+<body>
+<div id="preloader" class="preloader">
+    <div class="preloader__logo">
+        <img src="/tpl/img/preloader-logo.svg" alt="Aveo Property">
+    </div>
+</div>
+
+[[$headerMenu]]
+
+<div id="page" class="page page-[[pageClass]]">
+
+    [[*content]]
+
+    <footer class="footer">
+        <div class="footer__social-copyright">
+            <div class="footer__social">
+                <div class="ya-share2" data-services="facebook,vkontakte,twitter,odnoklassniki,gplus,whatsapp,telegram"
+                     data-bare></div>
+            </div>
+            <div class="footer__copyright">© [[!getDate:date=`%Y`]] [[%copyright? &namespace=`aveo`]]</div>
+        </div>
+        <div class="footer__nav">
+            <div class="footer__nowrap">
+                <div class="footer__phone"><a href="tel:+35796228778">+357 96 228-778</a></div>
+            </div>
+            <div class="footer__nowrap">
+                <div class="footer__callback"><a class="popup-link"
+                                                 href="[[~[[BabelTranslation? &resourceId=`12`]]]]">[[%callback? &namespace=`aveo`]]</a>
+                </div>
+                <div class="footer__question"><a class="popup-link"
+                                                 href="[[~[[BabelTranslation? &resourceId=`15`]]]]">[[%ask_question? &namespace=`aveo`]]</a>
+                </div>
+                <div class="footer__selection"><a class="popup-link"
+                                                  href="[[~[[BabelTranslation? &resourceId=`17`]]]]">[[%order_selection_housing? &namespace=`aveo`]]</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__agreement">[[%not_offer? &namespace=`aveo`]]</div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">(window.jQuery.ui === undefined) &&
+	document.write('<script src="/tpl/js/lib/jquery-ui.min.js"><\/script>');</script>
+    <script src="/tpl/js/lib/hammer.min.js"></script>
+</div>
+
+<div id="fixed-header" class="fixed-header fixed-header_page-[[pageClass]]">
+    <div class="fixed-header__logo">
+        <a href="[[~[[BabelTranslation? &resourceId=`1`]]]]" title="[[%copyright? &namespace=`aveo`]]"><img
+                src="/tpl/img/logo-color.svg" alt="[[%copyright? &namespace=`aveo`]]"></a>
+    </div>
+    <div class="fixed-header__nav">
+        <div class="fixed-header__links">
+            <div class="fixed-header__links-item fixed-header__selection"><a
+                    href="[[~[[BabelTranslation? &resourceId=`17`]]]]"
+                    class="popup-link">[[%order_selection_housing? &namespace=`aveo`]]</a></div>
+            <div class="fixed-header__links-item fixed-header__question"><a
+                    href="[[~[[BabelTranslation? &resourceId=`15`]]]]"
+                    class="popup-link">[[%ask_question? &namespace=`aveo`]]</a></div>
+            <div class="fixed-header__links-item fixed-header__callback"><a
+                    href="[[~[[BabelTranslation? &resourceId=`12`]]]]"
+                    class="popup-link">[[%callback? &namespace=`aveo`]]</a></div>
+            <div class="fixed-header__links-item fixed-header__catalog"><a
+                    href="[[~[[BabelTranslation? &resourceId=`21`]]]]"
+                    class="popup-link">[[%properties_catalog? &namespace=`aveo`]]</a></div>
+        </div>
+        <div class="fixed-header__phone">
+            <a href="tel:+35796228778">
+                <span class="fixed-header__phone-icon"><i class="icon-phone"></i></span>
+                <span class="fixed-header__phone-title">+357 96 228-778</span>
+            </a>
+        </div>
+        <div class="fixed-header__actions">
+            <div class="fixed-header__actions-item fixed-header__search"><a
+                    href="[[~[[BabelTranslation? &resourceId=`57`]]]]" class="popup-link"><i
+                    class="icon-search-menu"></i></a></div>
+            <div class="fixed-header__actions-item fixed-header__fav"><a class="icon-fav"
+                                                                         href="[[~[[BabelTranslation? &resourceId=`8`]]]]"
+                                                                         rel="nofollow"><span class="msfavorites-total"
+                                                                                              data-data-list="default"
+                                                                                              data-value="0"></span><i
+                    class="icon-fav-menu"></i></a></div>
+        </div>
+    </div>
+    <div class="sitemap-nav">[[$sitemapNav]]</div>
+</div>
+
+<div id="layout" class="layout">
+    <div class="layout__sitemap">
+        <div class="layout__content layout__content_sitemap">[[$popupSitemap]]</div>
+    </div>
+    <div class="layout__page">
+        <div class="layout__content layout__content_page"></div>
+        <div class="layout__close"></div>
+    </div>
+    <div class="sitemap-nav layout__sitemap-icon">
+        [[$sitemapNav]]
+    </div>
+</div>
+
+</body>
+</html>
