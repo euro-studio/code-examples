@@ -1,0 +1,37 @@
+@import "core/css3";
+@import "core/reset";
+
+@import "settings/variables";
+@import "settings/mixins";
+
+@import "layout/preloader";
+
+@import "settings/fonts";
+@import "settings/base";
+@import "core/fotorama";
+
+@import "layout/header-menu";
+@import "layout/general";
+@import "layout/sitemap-nav";
+@import "layout/fixed-header";
+@import "layout/catalog-items";
+@import "layout/catalog-list-view";
+@import "layout/forms";
+@import "layout/footer";
+@import "layout/request-selection";
+@import "layout/popup";
+@import "layout/filters";
+
+@import "pages/home";
+@import "pages/catalog";
+@import "pages/object";
+@import "pages/map";
+@import "pages/blog";
+@import "pages/articles";
+@import "pages/about";
+@import "pages/contacts";
+
+@import "layout/animations";
+@import "layout/ya-social";
+@import "layout/jivosite";
+@import "layout/print";
